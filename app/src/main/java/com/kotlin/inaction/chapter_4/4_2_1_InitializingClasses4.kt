@@ -5,9 +5,9 @@ package com.kotlin.inaction.chapter_4
  * @author wzc
  * @date 2019/1/22
  */
-open class Button6 // 没有声明构造方法，将会生成一个不做任何事情的默认构造方法
+open class Button8 // 没有声明构造方法，将会生成一个不做任何事情的默认构造方法
 
-class RadioButton: Button6() // 必须显式地调用父类的构造方法，所以Button6后面有个括号
+class RadioButton: Button8() // 必须显式地调用父类的构造方法，所以Button6后面有个括号
 
 /**
  * 总结：
