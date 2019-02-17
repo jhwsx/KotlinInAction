@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".chapter_5.SAMConstructorsActivity"
+            android:label="SAMConstructorsActivity"/>
     </application>
 
 </manifest>
