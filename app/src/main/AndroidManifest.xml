@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".chapter_5.SAMConstructorsActivity"
             android:label="SAMConstructorsActivity"/>
+        <activity android:name=".chapter_5.LambdaWithReceiverApplyActivity"
+            android:label="LambdaWithReceiverApply"/>
     </application>
 
 </manifest>
