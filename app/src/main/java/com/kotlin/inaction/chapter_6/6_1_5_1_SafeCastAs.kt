@@ -10,7 +10,7 @@ fun boo(x: Any) {
     println(number)
 }
 
-fun boo1(x: Any) {
+fun boo1(x: Any?) {
     val number = x as? Number
     println(number)
 }
@@ -25,6 +25,7 @@ fun boo2(x: Any) {
 fun main(args: Array<String>) {
     boo1(5)
     boo1("b")
+    boo1(null)
     boo2(5)
     boo2("b")
     boo(5)
