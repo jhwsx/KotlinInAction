@@ -23,3 +23,7 @@ fun main(args: Array<String>) {
 
     println(h1.equals(42))
 }
+/**
+ * 总结：
+ * 1，把安全转换和 Elvis 运算符结合的例子。
+ */
