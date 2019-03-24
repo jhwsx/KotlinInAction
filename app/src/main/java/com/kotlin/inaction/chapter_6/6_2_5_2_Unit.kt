@@ -29,4 +29,6 @@ fun main(args: Array<String>) {
     val resultProcessor = ResultProcessor()
     val process = resultProcessor.process()
     println(process)
+    var list:List<Int> = listOf<Int>(1,2,3)
+
 }
