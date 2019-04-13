@@ -13,7 +13,7 @@ class A {
         }
 
         fun boo() {
-
+            A().hhhh()
         }
     }
 
