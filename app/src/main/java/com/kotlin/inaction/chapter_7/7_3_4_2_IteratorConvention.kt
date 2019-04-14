@@ -27,6 +27,7 @@ fun main(args: Array<String>) {
 /**
  * 总结：
  * 1, 实现日期区间的迭代器；
- * 2，CloseRange 是什么作用？todo
- * 3，apply，with 的区别
+ * 2，CloseRange 是什么作用？代表了一个值的区间，IntRange 就实现了 ClosedRange 这个接口。
+ * 3，apply，with 的区别：
+ * apply 返回的还是自己，with 返回的是最后一个表达式的值。
  */
