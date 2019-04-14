@@ -11,7 +11,7 @@ fun printEntries(map: Map<String, String>) {
     }
 }
 
-fun main() {
+fun main(args: Array<String>) {
     val map = mapOf(
         "Z40" to "Shanghai-Zhengzhou",
         "K154" to "Zhengzhou-Shanghai"

@@ -23,7 +23,7 @@ class Person1(val name: String) {
         }
 }
 
-fun main() {
+fun main(args: Array<String>) {
     val p = Person1("wzc")
     p.emails
     p.emails

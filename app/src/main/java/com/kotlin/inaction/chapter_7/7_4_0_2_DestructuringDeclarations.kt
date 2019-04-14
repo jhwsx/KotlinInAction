@@ -11,7 +11,7 @@ class Point9(val x: Int, val y: Int){
     operator fun component2() = y
 }
 
-fun main() {
+fun main(args: Array<String>) {
     val p = Point9(10, 20)
     val (x, y) = p
     println("x=$x, y=$y")

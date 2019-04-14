@@ -13,7 +13,7 @@ fun splitFileName1(fullName: String): NameComponents1 {
 
 }
 
-fun main() {
+fun main(args: Array<String>) {
     val (name, extension) = splitFileName1("helloworld.kt")
     println(name)
     println(extension)

@@ -7,7 +7,7 @@ package com.kotlin.inaction.chapter_7
  */
 data class Point8(val x: Int, val y: Int)
 
-fun main() {
+fun main(args: Array<String>) {
     val p = Point8(10, 20)
     val (x, y) = p
     println("x=$x, y=$y")
