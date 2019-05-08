@@ -1,5 +1,7 @@
 package com.kotlin.inaction.chapter_8
 
+import java.util.*
+
 /**
  *
  * @author wzc
@@ -28,13 +30,17 @@ fun main(args: Array<String>) {
 
 
     val url = "http://kotlin"
-    performRequest(url) {code, content -> println(url)}
-    performRequest(url) {code, page -> println(url)}
+    performRequest(url) {code, content -> println("$url performRequest, result: code=$code, content=$content")}
+    performRequest(url) {code, page -> println("$url performRequest, result: code=$code, content=$page")}
 }
 
 // 函数类型的参数名例子
 fun performRequest(url: String, callBack: (code: Int, content: String) -> Unit) {
-
+    if (Random().nextBoolean()) {
+        callBack(0, "Success")
+    } else {
+        callBack(1,"Fail")
+    }
 }
 
 /**
