@@ -9,7 +9,7 @@ fun <T> Collection<T>.joinToString3(
     separator: String = ", ",
     prefix: String = "",
     postfix: String = "",
-    transform:((T) -> String)? = null
+    transform:((T) -> String)? = null // 这是一个函数类型的可空参数
 ):String {
     val result = StringBuilder(prefix)
     for ((index, element) in this.withIndex()) {
