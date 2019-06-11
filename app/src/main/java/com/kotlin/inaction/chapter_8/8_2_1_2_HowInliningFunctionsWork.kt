@@ -1,6 +1,7 @@
 package com.kotlin.inaction.chapter_8
 
 import java.util.concurrent.locks.Lock
+import java.util.concurrent.locks.ReentrantLock
 
 /**
  *
@@ -11,6 +12,10 @@ class LockOwner(val lock: Lock) {
     fun runUnderLock(body: () -> Unit) {
         synchronized(lock, body)
     }
+}
+
+fun main(args: Array<String>) {
+    LockOwner(ReentrantLock()).run { println("Hello") }
 }
 
 /**
