@@ -15,3 +15,8 @@ fun main(args: Array<String>) {
     println(max("kotlin", "python"))
 //    println(max("kotlin", 42))
 }
+
+/**
+ * 总结：
+ * 1, T 的上界是泛型类型 Comparable<T>
+ */
