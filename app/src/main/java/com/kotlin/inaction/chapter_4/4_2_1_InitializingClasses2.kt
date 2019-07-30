@@ -11,17 +11,19 @@ class User5(
 )
 
 fun main(args: Array<String>) {
+    val wzc = User5() // 这个就是额外生成的不带参数的构造方法，但使用了所有的默认值
+    println("nickname=${wzc.nickname},isSubscribed=${wzc.isSubscribed}")
     val john = User5("John")
-    println(john.isSubscribed)
+    println("nickname=${john.nickname},isSubscribed=${john.isSubscribed}")
 
     val peter = User5("Peter", false)
-    println(peter.isSubscribed)
+    println("nickname=${peter.nickname},isSubscribed=${peter.isSubscribed}")
 
     val may = User5("May", isSubscribed = false)
-    println(may.isSubscribed)
+    println("nickname=${may.nickname},isSubscribed=${may.isSubscribed}")
 
     val tiger = User5(isSubscribed = false, nickname = "Tiger")
-    println(tiger.isSubscribed)
+    println("nickname=${tiger.nickname},isSubscribed=${tiger.isSubscribed}")
 }
 
 /**
