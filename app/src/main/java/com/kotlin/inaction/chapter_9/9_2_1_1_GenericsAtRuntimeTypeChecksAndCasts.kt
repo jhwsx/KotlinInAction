@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
 //
 //    }
 
-    if (list is List<*>) {
+    if (list is List<*>) { // 这就是星号投影语法
         println(true)
     }
 
@@ -27,4 +27,7 @@ fun main(args: Array<String>) {
  * 1，kotlin 不允许使用没有指定类型实参的泛型类型；
  * 2，可以把 List<*> 看成拥有未知类型实参的泛型类型，或者类比为 java 中的 List<?>;
  * 3，仅仅是检查了 list 是不是 List，对于它的元素类型并没有检查。
+ * 4, 什么是类型擦除？泛型类实例的类型实参在运行时是不保留的。
+ * 5，实化：可以声明一个 inline 函数，使其类型实参不被擦除。
+ * 6，上面的例子说明：在 is 检查中不可能使用类型实参中的类型
  */
