@@ -18,5 +18,7 @@ fun main(args: Array<String>) {
 
 /**
  * 总结：
- * 1, T 的上界是泛型类型 Comparable<T>
+ * 1, T 的上界是泛型类型 Comparable<T>；
+ * 2，上面的 first > second,会被编译成 first.compareTo(second) > 0,这是因为对于 Comparable
+ * 接口，接口中的 compareTo 方法可以使用 > , <, <= 和 >= 来重载。
  */

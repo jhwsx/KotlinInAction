@@ -2,7 +2,7 @@
 //
 //import org.junit.Assert
 //import org.junit.Before
-//import org.junit.Test
+//import org.junit.Test_TypeParameterConstraints
 //
 ///**
 // *
@@ -16,7 +16,7 @@
 //        myService = MyService()
 //    }
 //
-//    @Test fun testAction() {
+//    @Test_TypeParameterConstraints fun testAction() {
 //        Assert.assertEquals("foo", myService.performAction())
 //    }
 //}

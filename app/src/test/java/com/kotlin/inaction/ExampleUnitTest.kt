@@ -1,6 +1,6 @@
 //package com.kotlin.inaction
 //
-//import org.junit.Test
+//import org.junit.Test_TypeParameterConstraints
 //
 //import org.junit.Assert.*
 //
@@ -10,7 +10,7 @@
 // * See [testing documentation](http://d.android.com/tools/testing).
 // */
 //class ExampleUnitTest {
-//    @Test
+//    @Test_TypeParameterConstraints
 //    fun addition_isCorrect() {
 //        assertEquals(4, 2 + 2)
 //    }
