@@ -1,7 +1,5 @@
 package com.kotlin.inaction.chapter_9
 
-import com.kotlin.inaction.chapter_3.list
-
 /**
  *
  * @author wzc
@@ -9,6 +7,7 @@ import com.kotlin.inaction.chapter_3.list
  */
 fun main(args: Array<String>) {
     val list1: List<String> = listOf("a", "b")
+    val list: List<Int> = listOf(1,2)
 //    if (list is List<String>) { // Cannot check for instance of erased type: List<String>
 //
 //    }
@@ -16,7 +15,7 @@ fun main(args: Array<String>) {
 //
 //    }
 
-    if (list is List<*>) { // 这就是星号投影语法
+    if (list1 is List<*>) { // 这就是星号投影语法
         println(true)
     }
 
