@@ -14,7 +14,20 @@ fun testVariant2(list: List<Number>) {
 }
 
 fun main(args: Array<String>) {
-    val list = listOf<Int>()
+    val list = listOf<Int>(1,2,3)
+
+    val anyList: List<Any> = list
+
+    val any = anyList[0]
+    println("any is Int: ${any is Int}")
+    println(any)
+
+    val numberList: List<Number> = list
+    val number = numberList[1]
+
+    println("number is Int: ${number is Int}")
+
+    println(number)
 
     testVariant1(list)
 
