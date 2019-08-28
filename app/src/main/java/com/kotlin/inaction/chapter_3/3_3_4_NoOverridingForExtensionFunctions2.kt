@@ -5,11 +5,13 @@ package com.kotlin.inaction.chapter_3
  * @author wzc
  * @date 2019/1/12
  */
-fun View.showOff() = println("I'm a View")
-fun Button.showOff() = println("I'm a Button")
+fun View.showOff1() = println("I'm a View")
+fun Button.showOff1() = println("I'm a Button")
+fun View.showOff() = println("I am a View")
 
 fun main(args: Array<String>) {
     val view: View = Button()
+    view.showOff1()
     view.showOff()
 }
 
