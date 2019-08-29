@@ -22,7 +22,7 @@ fun saveUser2(user: User) {
 }
 
 fun main(args: Array<String>) {
-    saveUser1(User(1, "", ""))
+    saveUser2(User(1, "", ""))
 }
 
 /**
