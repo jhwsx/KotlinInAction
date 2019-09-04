@@ -1,5 +1,9 @@
 package com.kotlin.inaction.chapter_4
 
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.ObjectOutputStream
+
 /**
  *
  * @author wzc
@@ -15,4 +19,17 @@ class Button7 : View {
     class ButtonState : State {
 
     }
+}
+
+fun main(args: Array<String>) {
+    val buttonState = Button7.ButtonState()
+    try {
+        val oos = ObjectOutputStream(FileOutputStream("a.txt"))
+        oos.writeObject(buttonState)
+        oos.close()
+    } catch (e: IOException) {
+        e.printStackTrace()
+    }
+    println("ok")
+
 }
