@@ -30,3 +30,11 @@ fun main(args: Array<String>) {
     mutableUser.age = 19
     println("name=${mutableUser.name}, age=${mutableUser.age}")
 }
+
+/**
+ * 总结：
+ * 1，这是在map中保存属性值的例子
+ * 2，从这个例子中需要得出一点：
+ * by 右边的表达式不一定是新创建的实例，也可以是函数调用、另一个属性或任何其他表达式，只要这个表达式的值，是
+ * 能够被编译器用正确的参数类型来调用 getValue 和 setValue 的对象
+ */
