@@ -25,8 +25,17 @@ class Person1(val name: String) {
 
 fun main(args: Array<String>) {
     val p = Person1("wzc")
-    p.emails
-    p.emails
+    Thread {
+        println("thread=${Thread.currentThread().name}")
+        p.emails
+        p.emails
+    }.start()
+
+    Thread {
+        println("thread=${Thread.currentThread().name}")
+        p.emails
+        p.emails
+    }.start()
 }
 
 /**
