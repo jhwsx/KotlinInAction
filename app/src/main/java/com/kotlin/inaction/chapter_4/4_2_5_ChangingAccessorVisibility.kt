@@ -27,6 +27,7 @@ class GradesCounter {
 fun main(args: Array<String>) {
     val lengthCounter = LengthCounter()
     lengthCounter.addWord("Hi!")
+    // lengthCounter.counter = 2 // Cannot assign to 'counter': the setter is private in 'LengthCounter'
     println(lengthCounter.counter)
     val gradesCounter = GradesCounter()
 //    gradesCounter.counter = 5
