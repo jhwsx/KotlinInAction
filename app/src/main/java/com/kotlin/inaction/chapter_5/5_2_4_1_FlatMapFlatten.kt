@@ -7,8 +7,10 @@ package com.kotlin.inaction.chapter_5
  */
 fun main(args: Array<String>) {
     val strings = listOf("abc", "def")
-    println(strings.flatMap { it.toList() })
+    println("map:" + strings.map { it.toList() })
+    println("flatMap: " + strings.flatMap { it.toList() })
     val list = listOf(listOf(1, 2), listOf(3, 4))
     println(list.flatten())
+    println("flatten:" + list.flatten())
 
 }
