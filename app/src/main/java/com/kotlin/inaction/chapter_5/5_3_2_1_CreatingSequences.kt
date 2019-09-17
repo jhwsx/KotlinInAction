@@ -8,7 +8,7 @@ package com.kotlin.inaction.chapter_5
 fun main(args: Array<String>) {
     val naturalNumbers = generateSequence(0) { it + 1 } // 从 0 开始，依次加 1 ，生成一个序列
     val numbersTo100 = naturalNumbers.takeWhile { it <= 100 } // 满足小于 100 的序列
-    println(numbersTo100.sum()) // 对序列求和
+    println(numbersTo100.sum()) // 对序列求和，这是末端操作
 }
 
 /**
