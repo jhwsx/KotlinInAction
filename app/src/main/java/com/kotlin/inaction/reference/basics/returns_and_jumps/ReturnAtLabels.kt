@@ -12,6 +12,8 @@ fun main(args: Array<String>) {
     foo3()
     println()
     foo4()
+    println()
+    abc()
 }
 
 fun foo1() {
@@ -42,4 +44,14 @@ fun foo4() {
         print(value)
     })
     println(" done with anonymous function")
+}
+
+fun abc() {
+    val s: String? = "s"
+    s?.let qiangbin@{
+        if (it == "s") {
+            return@qiangbin
+        }
+    }
+    println("reach here")
 }
