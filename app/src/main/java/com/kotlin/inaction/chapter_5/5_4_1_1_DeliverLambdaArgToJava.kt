@@ -7,7 +7,7 @@ package com.kotlin.inaction.chapter_5
  */
 fun main(args: Array<String>) {
     // 传递 lambda 表达式
-    ReceiveLambdaArg.postponeComputation(1000) { println(42) }
+    ReceiveLambdaArg.postponeComputation(1000) { println(42) } // 整个程序只会创建一个 Runnable 实例
     // 传递 匿名对象 的方式
     ReceiveLambdaArg.postponeComputation(1000, object : Runnable {
         override fun run() {
@@ -15,14 +15,14 @@ fun main(args: Array<String>) {
         }
     })
     // 这种用法和第一种是等价的
-    val runnable = Runnable { println(44) }
+    val runnable = Runnable { println(44) } // 可以重用
     ReceiveLambdaArg.postponeComputation(1000, runnable)
 
     handleComputation("create new instance every time")
 }
 
 fun handleComputation(id: String) {
-    ReceiveLambdaArg.postponeComputation(1000) { println(id) }
+    ReceiveLambdaArg.postponeComputation(1000) { println(id) } // lambda 捕获 id 这个变量，这样 handleComputation 调用时都会创建一个新的 Runnable 实例了。
 }
 /**
  * 总结：
