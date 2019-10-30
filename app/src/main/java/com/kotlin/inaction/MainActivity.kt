@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         val button_lambda_with_receiver_apply = findViewById<Button>(R.id.button3)
         button_lambda_with_receiver_apply.setOnClickListener {
-            startActivity(Intent(this, LambdaWithReceiverApplyActivity::class.java))
+            startActivity(Intent(this, CoroutinesActivity::class.java))
         }
     }
 }
