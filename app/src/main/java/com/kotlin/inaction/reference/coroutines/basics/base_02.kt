@@ -11,6 +11,7 @@ import kotlin.concurrent.thread
  */
 fun main(args: Array<String>) {
     thread {
+        println("thread: threadName="+ Thread.currentThread().name)
         Thread.sleep(1000L)
         println("World!")
     }

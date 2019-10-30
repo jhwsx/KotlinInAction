@@ -17,3 +17,8 @@ fun main(args: Array<String>) {
     println("Hello,")
     Thread.sleep(2000L)
 }
+
+/**
+ * 总结：
+ * 1，delay 是一个 挂起函数（suspending function），不会阻塞线程，但会阻塞协程；它只能用在协程里面。
+ */
