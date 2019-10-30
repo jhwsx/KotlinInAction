@@ -20,6 +20,7 @@
             android:label="SAMConstructorsActivity"/>
         <activity android:name=".chapter_5.LambdaWithReceiverApplyActivity"
             android:label="LambdaWithReceiverApply"/>
+        <activity android:name=".CoroutinesActivity" />
     </application>
 
 </manifest>
