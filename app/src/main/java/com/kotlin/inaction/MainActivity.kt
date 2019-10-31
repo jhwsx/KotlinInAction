@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import com.kotlin.inaction.chapter_5.LambdaWithReceiverApplyActivity
 import com.kotlin.inaction.chapter_5.SAMConstructorsActivity
+import kotlinx.android.synthetic.main.activity_main.button_coroutines
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,6 +40,9 @@ class MainActivity : AppCompatActivity() {
 
         val button_lambda_with_receiver_apply = findViewById<Button>(R.id.button3)
         button_lambda_with_receiver_apply.setOnClickListener {
+            startActivity(Intent(this, LambdaWithReceiverApplyActivity::class.java))
+        }
+        button_coroutines.setOnClickListener {
             startActivity(Intent(this, CoroutinesActivity::class.java))
         }
     }
