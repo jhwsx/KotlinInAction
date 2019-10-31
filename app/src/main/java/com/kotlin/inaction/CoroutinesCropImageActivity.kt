@@ -27,7 +27,7 @@ class CoroutinesCropImageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutines_crop_image)
         val coroutineScope = CoroutineScope(Dispatchers.Main)
-        coroutineScope.launch(Dispatchers.IO) {
+        coroutineScope.launch {
             Log.d(TAG, "1,threadName=${Thread.currentThread().name}") // main
             val bitmap = withContext(Dispatchers.IO) {
                 Log.d(TAG, "2,threadName=${Thread.currentThread().name}") // DefaultDispatcher-worker-1
