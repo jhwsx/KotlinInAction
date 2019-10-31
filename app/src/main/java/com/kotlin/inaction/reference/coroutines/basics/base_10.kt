@@ -9,7 +9,9 @@ import kotlinx.coroutines.runBlocking
  * @date 2019/10/30
  */
 fun main(args: Array<String>) = runBlocking {
+    println("1, threadName=${Thread.currentThread().name}") // threadName=main
     launch {
+        println("2, threadName=${Thread.currentThread().name}") // threadName=main
         doWorld()
     }
     println("Hello,")

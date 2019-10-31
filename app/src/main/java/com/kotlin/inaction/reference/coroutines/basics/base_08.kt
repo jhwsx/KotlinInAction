@@ -10,11 +10,14 @@ import kotlinx.coroutines.runBlocking
  */
 fun main(args: Array<String>) = runBlocking {
     println(this)
+    println("1, threadName=${Thread.currentThread().name}") // threadName=main
     println(coroutineContext) // 这里可以打印出 coroutineContext，而 coroutineContext 正是 CoroutineScope 接口的一个属性。
     launch {
+        println("2, threadName=${Thread.currentThread().name}") // threadName=main
         delay(1000L)
         println("World!")
     }
+    println("3, threadName=${Thread.currentThread().name}") // threadName=main
     println("Hello,")
 }
 

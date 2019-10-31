@@ -31,7 +31,7 @@ World!
 
 /**
  * 总结：
- * 1，使用 runBlocking 包裹了主函数的代码，与 FirstCoroutines5 是功能一样的。
+ * 1，使用 runBlocking 包裹了主函数的代码，与 base_04 是功能一样的。
  * 2，runBlocking<Unit>, 作为一个适配器，开启了顶层的主协程。这里指定 Unit 是作为它的返回值，因为
  * 在 Kotlin 中一个好的 main 方法需要返回一个 Unit。
  */

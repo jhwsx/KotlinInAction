@@ -11,14 +11,14 @@ import kotlinx.coroutines.runBlocking
  */
 fun main(args: Array<String>) = runBlocking {
     launch {
-        println("launch 1 coroutine, threadName=${Thread.currentThread().name}")
+        println("launch 1 coroutine, threadName=${Thread.currentThread().name}") // main
         delay(200L)
         println("Task from runBlocking")
     }
     coroutineScope {
-        println("coroutineScope coroutine, threadName=${Thread.currentThread().name}")
+        println("coroutineScope coroutine, threadName=${Thread.currentThread().name}") // main
         launch {
-            println("launch 2 coroutine, threadName=${Thread.currentThread().name}")
+            println("launch 2 coroutine, threadName=${Thread.currentThread().name}") // main
             delay(500L)
             println("Task from nested launch")
         }
