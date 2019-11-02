@@ -1,4 +1,4 @@
-package com.kotlin.inaction.reference.coroutines.cancellation_and_timeouts
+package com.kotlin.inaction.reference.coroutines._02_cancellation_and_timeouts
 
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.cancelAndJoin

@@ -1,6 +1,5 @@
-package com.kotlin.inaction.reference.coroutines.cancellation_and_timeouts
+package com.kotlin.inaction.reference.coroutines._02_cancellation_and_timeouts
 
-import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -24,10 +23,8 @@ fun main(args: Array<String>) = runBlocking {
     delay(1300L)
     println("5, threadName=${Thread.currentThread().name}") // main
     println("main: I'm tired of waiting!")
-//    job.cancel() // cancel 调用后，就不会再有 3 输出了。
-//    job.join()
-    // 下边这行等效于上面的两行
-    job.cancelAndJoin()
+    job.cancel() // cancel 调用后，就不会再有 3 输出了。
+    job.join()
     println("main: Now I can quit.")
 
 }

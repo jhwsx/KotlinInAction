@@ -1,4 +1,4 @@
-package com.kotlin.inaction.reference.coroutines.basics
+package com.kotlin.inaction.reference.coroutines._01_basics
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay

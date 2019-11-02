@@ -1,31 +1,30 @@
-package com.kotlin.inaction.reference.coroutines.cancellation_and_timeouts
+package com.kotlin.inaction.reference.coroutines._02_cancellation_and_timeouts
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.yield
 
 /**
- * 对于一个在计算任务中的协程，即便调用了 cancel 也不能停止它的计算。
+ * 演示取消一个在计算任务中的协程，通过 yield()
  * @author wangzhichao
  * @date 2019/10/31
  */
 fun main(args: Array<String>) = runBlocking {
-    val startTime = System.currentTimeMillis() // threadName=main
-    println("1, threadName=${Thread.currentThread().name}")
+    val startTime = System.currentTimeMillis()
     val job = launch(Dispatchers.Default) {
-        println("2, threadName=${Thread.currentThread().name}") // threadName=DefaultDispatcher-worker-2
         var nextPrintTime = startTime
         var i = 0
         while (i < 5) {
+            yield() // 通过循环调用 yield(), 如果协程已经被取消，那么 isComplete 就为 true，再调用这个 yield() 就会抛出 getCancellationException
             if (System.currentTimeMillis() >= nextPrintTime) {
                 println("job: I'm sleeping ${i++} ...")
                 nextPrintTime += 500L
             }
         }
     }
-    println("3, threadName=${Thread.currentThread().name}") // threadName=main
     delay(1300L)
     println("main: I'm tired of waiting")
     job.cancelAndJoin()
