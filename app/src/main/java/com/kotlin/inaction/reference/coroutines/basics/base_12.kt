@@ -1,31 +1,25 @@
 package com.kotlin.inaction.reference.coroutines.basics
 
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 /**
- * 接着看一下 base_12
+ * 与 base_10 一起看
  * @author wangzhichao
- * @date 2019/10/30
+ * @date 2019/11/02
  */
 fun main(args: Array<String>) = runBlocking {
     println("1, threadName=${Thread.currentThread().name}") // threadName=main
-    launch {
-        println("2, threadName=${Thread.currentThread().name}") // threadName=main
-        doWorld()
-    }
+    doWork()
     println("Hello,")
 }
-// 这是一个挂起函数
-suspend fun doWorld() {
-    delay(1000L)
-    println("World!")
+// 提取的函数包含 coroutine builder，这时候就不需要 suspend 关键字
+private fun CoroutineScope.doWork() { // 这是一个 CoroutineScope 的扩展函数
+    launch {
+        println("2, threadName=${Thread.currentThread().name}") // threadName=main
+        delay(1000L)
+        println("World!")
+    }
 }
-
-/**
- * 总结：
- * 1，普通函数和挂起函数的区别？
- * 它们都可以用在协程里面；
- * 但是挂起函数可以调用其他挂起函数，而普通函数是不可以调用挂起函数的。
- */

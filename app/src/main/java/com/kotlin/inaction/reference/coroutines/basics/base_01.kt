@@ -10,10 +10,13 @@ import kotlinx.coroutines.launch
  */
 fun main(args: Array<String>) {
     println("start:${System.currentTimeMillis()}, threadName=${Thread.currentThread().name}") // threadName=main
-    GlobalScope.launch { // launch a new coroutine in background and continue
+    val launch = GlobalScope.launch {
+        // launch a new coroutine in background and continue
         delay(1000L) // non-blocking delay for 1 second (default time unit is ms)
         println("World!,${System.currentTimeMillis()}, threadName=${Thread.currentThread().name}") // print after delay threadName=DefaultDispatcher-worker-2
     }
+//    launch.cancel()
+    println("launch: $launch")
     println("Hello, ${System.currentTimeMillis()}, threadName=${Thread.currentThread().name}") // main thread continues while coroutine is delayed
     Thread.sleep(2000L) // block main thread for 2 seconds to keep JVM alive
     println("end:${System.currentTimeMillis()}, threadName=${Thread.currentThread().name}") // main

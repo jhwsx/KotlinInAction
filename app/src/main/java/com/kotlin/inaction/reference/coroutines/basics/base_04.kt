@@ -27,7 +27,7 @@ fun main(args: Array<String>) {
 
 /**
  * 总结：
- * 1，runBlocking 是线程阻塞的；
- * 2，GlobalScope.launch 不会阻塞线程;
+ * 1，runBlocking 是线程阻塞的，用于测试或 main 函数中，开启一个协程；
+ * 2，GlobalScope.launch 不会阻塞线程，开启一个协程;
  * 3, Thread.sleep() 是线程阻塞的。
  */
