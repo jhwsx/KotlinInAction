@@ -17,6 +17,8 @@ fun main(args: Array<String>) = runBlocking {
                 println("job: I'm sleeping ${it} ...")
                 delay(500L)
             }
+        } catch (e: Exception) {
+            println("e: $e")
         } finally {
             println("job: I'm running finally")
         }

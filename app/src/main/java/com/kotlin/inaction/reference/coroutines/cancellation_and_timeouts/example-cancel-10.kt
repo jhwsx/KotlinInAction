@@ -11,12 +11,15 @@ import kotlinx.coroutines.withTimeoutOrNull
  * @date 2019/10/31
  */
 fun main(args: Array<String>) = runBlocking {
+    //println("1, threadName=${Thread.currentThread().name}") // main
     val result = withTimeoutOrNull(1300L) {
+        //println("2, threadName=${Thread.currentThread().name}") // main
         repeat(1000) {
             println("I'm sleeping $it ...")
             delay(500L)
         }
         "Done"
     }
+    //println("3, threadName=${Thread.currentThread().name}") // main
     println("Result is $result")
 }
