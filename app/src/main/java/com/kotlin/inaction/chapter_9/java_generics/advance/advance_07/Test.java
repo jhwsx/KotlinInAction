@@ -25,5 +25,6 @@ public class Test {
         list.add(new CEO());
 
         Object object = list.get(0);
+        System.out.println(object);
     }
 }

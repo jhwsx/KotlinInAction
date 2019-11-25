@@ -22,7 +22,7 @@ public class Test {
     }
     // 绑定多个限定：
     // T 需要是 Fruit 的子类，还需要是 Serializable 的子类
-    public static <T extends Fruit& Serializable> String getFruitName2(T t) {
+    public static <T extends Fruit & Serializable> String getFruitName2(T t) {
         return t.getName();
     }
 }
