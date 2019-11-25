@@ -21,3 +21,10 @@ fun main(args: Array<String>) {
     Thread.sleep(2000L) // block main thread for 2 seconds to keep JVM alive
     println("end:${System.currentTimeMillis()}, threadName=${Thread.currentThread().name}") // main
 }
+/**
+start:1573700138222, threadName=main
+launch: StandaloneCoroutine{Active}@4b85612c
+Hello, 1573700138311, threadName=main
+World!,1573700139340, threadName=DefaultDispatcher-worker-1
+end:1573700140311, threadName=main
+ */
