@@ -15,5 +15,4 @@ fun main(args: Array<String>) {
  * 2, 这个函数的作用是接收一个集合，选择其中那些指定类的实例，然后
  * 返回这些被选中的实例。
  * Returns a list containing all elements that are instances of specified type parameter R.
- * 3,
  */

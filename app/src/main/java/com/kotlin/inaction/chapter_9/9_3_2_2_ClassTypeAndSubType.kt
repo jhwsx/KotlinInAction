@@ -16,4 +16,5 @@ val xd: List<List<List<String>>> = listOf()
  * 总结：
  * 1，泛型类与泛型类型？
  * 每一个泛型类都可能生成潜在的无限数量的类型
+ * List 是一个泛型类, 但它可以对应很多种类型: List<Int>, List<String> ...
  */

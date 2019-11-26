@@ -7,7 +7,7 @@ package com.kotlin.inaction.chapter_9
  */
 fun printSum(c: Collection<*>) {
     val intList = c as? List<Int>
-        ?: throw IllegalArgumentException("List is expected")
+            ?: throw IllegalArgumentException("List is expected")
     println(intList.sum())
 }
 

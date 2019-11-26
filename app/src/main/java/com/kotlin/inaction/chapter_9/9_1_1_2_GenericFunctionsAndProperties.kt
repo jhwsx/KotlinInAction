@@ -8,7 +8,7 @@ package com.kotlin.inaction.chapter_9
 fun main(args: Array<String>) {
     val icompanies = listOf("adups", "abup")
     val firms = mutableListOf("adups", "abup", "apple", "alphabet", "amazon")
-    val filter = firms.filter { it !in icompanies }
+    val filter = firms.filter<String> { it !in icompanies }
     println(filter)
 }
 /**

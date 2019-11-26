@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import com.kotlin.inaction.chapter_5.LambdaWithReceiverApplyActivity
 import com.kotlin.inaction.chapter_5.SAMConstructorsActivity
+import com.kotlin.inaction.chapter_9.startActivity
 import kotlinx.android.synthetic.main.activity_main.button_coroutines
 
 class MainActivity : AppCompatActivity() {
@@ -43,7 +44,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, LambdaWithReceiverApplyActivity::class.java))
         }
         button_coroutines.setOnClickListener {
-            startActivity(Intent(this, CoroutinesActivity::class.java))
+//            startActivity(Intent(this, CoroutinesActivity::class.java))
+            startActivity<CoroutinesActivity>()
         }
     }
 }

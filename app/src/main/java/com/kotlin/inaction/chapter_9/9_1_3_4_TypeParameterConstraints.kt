@@ -6,11 +6,12 @@ package com.kotlin.inaction.chapter_9
  * @date 2019/6/14
  */
 fun <T> ensureTrailingPeriod(seq: T)
-    where T:CharSequence, T: Appendable {
+        where T : CharSequence, T : Appendable {
     if (!seq.endsWith('.')) {
         seq.append('.')
     }
 }
+
 fun main(args: Array<String>) {
     val helloWorld = StringBuilder("Hello World")
     ensureTrailingPeriod(helloWorld)
