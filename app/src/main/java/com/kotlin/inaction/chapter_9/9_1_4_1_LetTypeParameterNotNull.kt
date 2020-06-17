@@ -1,5 +1,7 @@
 package com.kotlin.inaction.chapter_9
 
+import com.kotlin.inaction.chapter_6.Processor
+
 /**
  *
  * @author wzc
@@ -25,11 +27,27 @@ class Processor4<T: Number> {
 }
 
 fun main(args: Array<String>) {
+    // Processor1
     val processor1 = Processor1<String>()
     println(processor1.process("adups"))
-//    processor1.process(null)
+//    processor1.process(null) // 编译报错: 不能是 null
     val processor11 = Processor1<String?>()
     println(processor11.process(null))
+
+    // Processor2
+    val processor2 = Processor2<String>()
+    println(processor2.process("adups"))
+//    processor2.process(null) // 编译报错: 不能是 null
+    val processor22 = Processor2<String?>()
+    println(processor22.process(null))
+
+    // Processor3
+    val processor3 = Processor3<String>()
+//    val processor33 = Processor3<String?>() // 编译报错: 需要 Any, 而不是 String?
+
+    // Processor4
+    val processor4 = Processor4<Number>()
+//    val processor44 = Processor4<Number?>() // 编译报错:需要 Number, 而不是 Number?
 }
 
 /**

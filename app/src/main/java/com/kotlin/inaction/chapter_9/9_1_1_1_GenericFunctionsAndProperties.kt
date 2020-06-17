@@ -16,4 +16,6 @@ fun main(args: Array<String>) {
  * 所以可以调用 public fun <T> kotlin.collections.Iterable<T>.toList(): kotlin.collections.List<T> { /* compiled code */ }
  * 2，另外使用 .. 语法要把它括起来，这个运算符的优先级低于算术运算符。
  * 3，学习类型形参声明，以及如何使用类型形参。
+ * public fun <T> List<T>.slice(indices: IntRange): List<T>
+ * 第一个 <T> 表示类型形参声明, 后面的两个都是使用类型形参: 接收者使用和返回类型使用
  */
