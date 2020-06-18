@@ -12,6 +12,7 @@ fun max(a: Int, b: Int): Int { // 代码块体
 fun max2(a: Int, b: Int): Int = if (a > b) a else b // 表达式体
 
 fun max3(a: Int, b: Int) = if (a > b) a else b // 只有表达式体函数的返回类型可以省略
+
 fun main(arg: Array<String>) {
     println(max(1, 2))
 }
@@ -19,6 +20,7 @@ fun main(arg: Array<String>) {
 /*
 总结：
 1，在Kotlin中，if 是有结果的表达式。
-2，代码块体和表达式体
+2，代码块体（block body）: 函数体写在花括号里面
+表达式体（expression body）： 函数直接返回一个表达式，没有花括号。
 3，类型推导
  */
