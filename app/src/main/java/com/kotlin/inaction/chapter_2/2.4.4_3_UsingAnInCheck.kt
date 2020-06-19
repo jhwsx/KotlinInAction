@@ -6,7 +6,7 @@ package com.kotlin.inaction.chapter_2
  * @date 2019/1/6
  */
 fun main(args: Array<String>) {
-    println("Kotlin" in "Java".."Scala")
+    println("Kotlin" in "Java".."Scala") // String 实现了 Comparable 接口
     println("Kotlin" in setOf("Java", "Swift"))
 }
 /**

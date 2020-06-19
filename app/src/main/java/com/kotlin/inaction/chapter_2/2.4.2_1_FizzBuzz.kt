@@ -14,6 +14,11 @@ fun fizzbuzz(i: Int) =
     }
 
 fun main(args: Array<String>) {
+    // 这三种写法是等价的
+    val oneToTen1 = 1..10 // 这是 IntRange 类型的
+    val oneToTen2: IntRange = 1..10
+    val oneToTen3: IntRange = 1.rangeTo(10)
+
     for (i in 1..100) {
         print(fizzbuzz(i))
     }
