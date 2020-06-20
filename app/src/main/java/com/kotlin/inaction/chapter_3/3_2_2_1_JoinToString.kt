@@ -24,8 +24,8 @@ fun <T> joinToString(
 
 fun main(args: Array<String>) {
     val list = listOf(1, 2, 3)
-    println(joinToString(list, "; ", "(",")"))
-    println(joinToString(list, separator = ", ",prefix = "{",postfix = "}")) // 这里用的是命名参数
+    println(joinToString(list, "; ", "(", ")"))
+    println(joinToString(list, separator = ", ", prefix = "{", postfix = "}")) // 这里用的是命名参数
 }
 
 /**

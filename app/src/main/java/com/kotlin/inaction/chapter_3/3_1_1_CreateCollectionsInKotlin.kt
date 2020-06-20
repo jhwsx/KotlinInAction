@@ -13,7 +13,7 @@ fun main(args: Array<String>) {
     println(set)
     println(list)
     println(map)
-    println(set.javaClass)
+    println(set.javaClass) // Kotlin 中的 javaClass 等价于 Java 的 getClass()
     println(list.javaClass)
     println(map.javaClass)
 }
@@ -29,5 +29,5 @@ class java.util.HashMap
 /**
  * 总结：
  * 1，kotlin 中创建集合的方式；
- * 2，kotlin 中没有自己的集合，采用的仍是 java 中的集合
+ * 2，kotlin 中没有自己的集合，采用的仍是 java 中的集合，这是为了 Kotlin 可以更容易地与 Java 代码交互。
  */

@@ -19,3 +19,5 @@ fun main(args: Array<String>) {
     val view: View = Button()
     view.click()
 }
+
+// click 方法被子类重写了，运行时调用的是子类的 click 方法。
