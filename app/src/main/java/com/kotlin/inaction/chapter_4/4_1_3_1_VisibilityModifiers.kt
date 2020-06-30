@@ -17,11 +17,11 @@ internal open class TalkativeButton : Focusable1 {
     protected fun whisper() = println("Let's talk!")
 }
 
-//fun TalkativeButton.giveSpeech() {
-//    yell()
-//
-//    whisper()
-//}
+//fun TalkativeButton.giveSpeech() { // giveSpeech 是 public 的，暴露了 internal 修饰的接收者类型 TalkativeButton
+////    yell()
+////
+////    whisper()
+////}
 
 fun main(args: Array<String>) {
 
@@ -35,6 +35,6 @@ fun main(args: Array<String>) {
  * 4，kotlin中允许在顶层声明中使用private的可见性，包括类、函数和属性，表示这些声明只在声明它们的文件中可见。
  * 5，kotlin中的protected与java中的protected不同：在java中，protected可以从同一个包中访问一个protected的成员，
  * 在kotlin中protected成员只能在类和它的子类中可见。
- * 6, kotlin中一个外部类不能看到其内部（或者嵌套）类中的private成员。
+ * 6, kotlin中一个外部类不能看到其内部（或者嵌套）类中的private成员。 例子看 4_1_4_3_InnerClass.kt, Button6.java
  * 7, kotlin中类的扩展函数不能访问它的private和protected成员
  */

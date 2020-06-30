@@ -23,11 +23,33 @@ public class Button6 implements View {
     }
 
     public class ButtonState implements State {
+
+        private int size = 5;
+
+        private void privateMethod() {
+            System.out.println("privateMethod()");
+        }
+        public void method() {
+            System.out.println(Button6.this);
+        }
+    }
+
+    public static class StaticInnerClass {
+        private int a = 5;
+
+        private void privateMethod() {
+            System.out.println("privateMethod()");
+        }
     }
 
     public static void main(String[] args) {
         Button6 button6 = new Button6();
         ButtonState buttonState = button6.new ButtonState();
+        System.out.println(buttonState.size);
+        buttonState.privateMethod();
+        StaticInnerClass staticInnerClass = new StaticInnerClass();
+        System.out.println(staticInnerClass.a);
+        staticInnerClass.privateMethod();
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("a.txt"));
             oos.writeObject(buttonState);

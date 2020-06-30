@@ -8,10 +8,10 @@ package com.kotlin.inaction.chapter_4
 interface User7 {
     val email: String // 抽象属性
     val nickname: String // 自定义 getter
-    get() = email.substringBefore('@')
+        get() = email.substringBefore('@')
 }
 
-class User7Impl constructor(override val email: String): User7 {
+class User7Impl constructor(override val email: String) : User7 {
 
 }
 /**

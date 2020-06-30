@@ -19,6 +19,12 @@ class Button7 : View {
     class ButtonState : State {
 
     }
+
+    inner class InnerClass {
+        fun method() {
+            println(this@Button7)
+        }
+    }
 }
 
 fun main(args: Array<String>) {

@@ -9,5 +9,6 @@ package com.kotlin.inaction.chapter_4
 
 /**
  * 总结：
- * Modifier 'open' is incompatible with 'data'
+ * 1, 报错信息：Modifier 'open' is incompatible with 'data'
+ * 2， data 类是默认 final 修饰的。
  */

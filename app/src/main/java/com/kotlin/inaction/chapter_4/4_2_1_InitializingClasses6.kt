@@ -30,3 +30,7 @@ fun main(args: Array<String>) {
 * Second property: patient
 * Second initializer block that prints patient
 */
+/**
+ * 总结：
+ * 1，初始化器和初始化代码块的调用顺序取决于在代码中出现的顺序。
+ */

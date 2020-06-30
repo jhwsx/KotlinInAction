@@ -27,4 +27,5 @@ fun main(args: Array<String>) {
  *  kotlin 中在类名后面使用冒号来代替 java 中的 extends 和 implements 关键字；
  *  在java中使用@Override注解，在kotlin中是override修饰符；
  *  在kotlin中使用override修饰符是强制要求的。
+ *  kotlin 中的接口不可以声明常量，java 的接口可以声明常量。
  */

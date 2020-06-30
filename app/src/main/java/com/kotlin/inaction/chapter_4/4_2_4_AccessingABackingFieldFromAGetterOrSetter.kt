@@ -11,7 +11,7 @@ class User8 constructor(val name: String) {
             println(
                 """
             Address was changed for $name:
-            "$field" -> "$value".""".trimIndent()
+            "$field" -> "$value".""".trimIndent() // 读取支持字段的值
             )
 
             field = value // 更新支持字段的值
@@ -38,9 +38,12 @@ class Teacher constructor(val name: String) {
 
 class Book constructor(val name: String) {
     var price: Float = 0f
-    get() {return 100F}
+        get() {
+            return 100F
+        }
 
 }
+
 fun main(args: Array<String>) {
     val user = User8("Alice")
     user.address = "Elseheimerstrasse 47, 80687 Muenchen"
