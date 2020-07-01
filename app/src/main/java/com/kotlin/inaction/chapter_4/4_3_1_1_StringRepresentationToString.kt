@@ -15,6 +15,7 @@ fun main(args: Array<String>) {
     val client1 = Client("wangzhichao", 12345)
     val client2 = Client("wangzhichao", 12345)
     println(client1 == client2)
+    println(client1 === client2)
 }
 /**
  * 总结：
