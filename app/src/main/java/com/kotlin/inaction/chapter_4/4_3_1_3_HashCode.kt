@@ -33,6 +33,8 @@ fun main(args: Array<String>) {
  * 总结：
  * 1，在 hashset 中，去除相同的元素，必须重写元素的 hashCode() 和 equals() 方法：
  * hashCode() : 使属性值相同的对象的返回值必须相同，属性值不同的对象的返回值尽量不同，
- * 哈希算法提高了去重的效率，降低了equalsff 执行的次数；
+ * 哈希算法提高了去重的效率，降低了equals方法执行的次数；
  * equals() : 对 hashCode() 相同的对象，利用 equals 方法逐个比较属性值。
+ * 2，如果需要让 HashSet 认为两个对象相等，那么这两个对象必须有相同的 hash 值。重写了 hashCode() 方法可以
+ * 保证这一点，不重写的话无法保证这一点。
  */

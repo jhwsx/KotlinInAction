@@ -7,6 +7,25 @@ package com.kotlin.inaction.chapter_4
  */
 class Client(val name: String, val postalCode: Int){
     override fun toString() = "Client(name=$name postalCode=$postalCode)"
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Client
+
+        if (name != other.name) return false
+        if (postalCode != other.postalCode) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = name.hashCode()
+        result = 31 * result + postalCode
+        return result
+    }
+
+
 }
 
 fun main(args: Array<String>) {
@@ -15,6 +34,8 @@ fun main(args: Array<String>) {
     val client1 = Client("wangzhichao", 12345)
     val client2 = Client("wangzhichao", 12345)
     println(client1 == client2)
+    // 上面一行等价于调用下面一行
+    println(client1.equals(client2))
     println(client1 === client2)
 }
 /**

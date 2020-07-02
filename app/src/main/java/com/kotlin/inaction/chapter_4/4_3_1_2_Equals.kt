@@ -14,6 +14,10 @@ class Client1(val name: String, val postalCode: Int) {
                 postalCode == other.postalCode
     }
 
+    fun equals(other: Client1) {
+
+    }
+
     override fun toString(): String {
         return "Client1(name=$name, poastalCode=$postalCode)"
     }
