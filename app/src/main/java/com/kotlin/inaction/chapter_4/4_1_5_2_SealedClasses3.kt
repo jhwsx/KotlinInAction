@@ -13,6 +13,9 @@ fun eval2(e: Expr2): Int =
         is Num1 -> e.value
         is Sum1 -> eval2(e.right) + eval2(e.left)
     }
+sealed class Fruit2(open val price: Double)
+data class Apple(override val price: Double): Fruit2(price)
+data class Pear(override val price: Double): Fruit2(price)
 
 fun main(args: Array<String>) {
     println(eval2(Sum1(Num1(1), Num1(2))))

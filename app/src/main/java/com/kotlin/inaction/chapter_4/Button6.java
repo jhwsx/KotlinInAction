@@ -21,7 +21,7 @@ public class Button6 implements View {
     public void restoreState(@NotNull State state) {
 
     }
-
+    // ButtonState 隐式地存储了它的外部 Button6 类的引用。
     public class ButtonState implements State {
 
         private int size = 5;

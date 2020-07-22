@@ -33,7 +33,7 @@ fun main(args: Array<String>) {
     println(client)
     val client1 = Client("wangzhichao", 12345)
     val client2 = Client("wangzhichao", 12345)
-    println(client1 == client2)
+    println(client1 == client2) // 不重写 equals 方法，这里返回是 false； 重写后，这里返回是 true
     // 上面一行等价于调用下面一行
     println(client1.equals(client2))
     println(client1 === client2)

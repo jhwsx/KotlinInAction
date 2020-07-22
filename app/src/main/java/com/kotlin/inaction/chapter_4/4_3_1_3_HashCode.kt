@@ -23,6 +23,8 @@ class Client2(val name: String, val postalCode: Int) {
     }
 
 }
+// 转为 java，只有字段，构造，以及 getter/setter 方法。
+class Client5(val name: String, val postalCode: Int)
 
 fun main(args: Array<String>) {
     val processed = hashSetOf(Client2("wzc", 12345))

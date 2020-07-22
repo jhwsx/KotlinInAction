@@ -15,6 +15,26 @@ class LengthCounter {
     }
 }
 
+// 这种写法没有了 setter 方法，不合适
+//class HeightCounter {
+//    val counter: Int = 0
+//
+//    fun addHeight(height: Int) {
+//        counter += height
+//    }
+//}
+
+
+class WidthCounter {
+    var counter: Int = 0
+    //  private get // Getter visibility must be the same as property visibility
+}
+
+class DistanceCounter {
+    private var counter: Int = 0
+        private get // 这样可以，但是没有意义。
+}
+
 class GradesCounter {
     var counter: Int = 0
         protected set

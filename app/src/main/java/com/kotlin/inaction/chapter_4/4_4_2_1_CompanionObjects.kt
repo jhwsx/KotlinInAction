@@ -5,7 +5,15 @@ package com.kotlin.inaction.chapter_4
  * @author wzc
  * @date 2019/1/27
  */
+fun topMethod() {
+    val a = A()
+    // a.privateMethodInA() // 不可以访问 A 类中的私有成员，因为私有的成员只在类中可见。
+}
 class A {
+
+    private fun privateMethodInA() {
+        println("privateMethodInA()")
+    }
 
     companion object {
         fun bar() {
@@ -13,8 +21,12 @@ class A {
         }
 
         fun boo() {
-            A().hhhh()
+            A().hhhh() // 可以访问类的私有成员。
         }
+
+//        fun xx() {
+//            privateMethodInA()
+//        }
     }
 
     private fun hhhh() {

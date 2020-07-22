@@ -9,7 +9,7 @@ class User10 private constructor(val nickname: String) {
     companion object {
         fun newSubscribingUser(email: String) =
             User10(email.substringBefore('@'))
-
+        @JvmStatic
         fun newFacebookUser(accountId : Int) =
                 User10(getFacebookName(accountId))
     }

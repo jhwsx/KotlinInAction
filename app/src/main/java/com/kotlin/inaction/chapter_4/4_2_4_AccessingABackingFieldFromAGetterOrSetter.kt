@@ -16,6 +16,10 @@ class User8 constructor(val name: String) {
 
             field = value // 更新支持字段的值
         }
+        get(): String {
+            println("get() called")
+            return field // 只能读取支持字段的值。
+        }
 }
 
 class Student constructor(val name: String) {
@@ -37,9 +41,11 @@ class Teacher constructor(val name: String) {
 }
 
 class Book constructor(val name: String) {
-    var price: Float = 0f
+    var price: Float
         get() {
             return 100F
+        }
+        set(value) {
         }
 
 }
@@ -62,4 +68,6 @@ fun main(args: Array<String>) {
  * 4，有支持字段的属性和没有支持字段的属性有什么区别？
  * 如果显式地引用或者使用默认的访问器实现，编译器会为属性生成支持字段，
  * 如果提供了一个自定义的访问器实现并且没有使用field，支持字段不会被呈现出来。
+ * 5, 自定义的访问器且没有使用 field，如果是 val 属性，则只有 getter；如果是
+ * 可变属性，则有 getter 和 setter。
  */

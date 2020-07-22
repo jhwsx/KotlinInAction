@@ -9,7 +9,13 @@ package com.kotlin.inaction.chapter_4
 class Person(val name: String, val id: Int, val salary: Float)
 
 object Payroll {
+    // 可以有初始化语句块
+    init {
+        println("init block")
+    }
+    // 可以有属性
     val allEmployees = arrayListOf<Person>()
+    // 可以有方法
     fun calculateSalary(): Float {
         var result: Float = 0F
         for (person in allEmployees) {

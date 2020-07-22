@@ -26,7 +26,7 @@ fun <T> loadFromJSON(factory: JSONFactory<T>): T {
 }
 
 fun main(args: Array<String>) {
-    println(loadFromJSON(Person9))
+    println(loadFromJSON(Person9)) // 注意：传递的是 Person9
 }
 
 /**
