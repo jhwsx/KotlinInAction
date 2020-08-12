@@ -18,4 +18,5 @@ fun main(args: Array<String>) {
 /**
  * 总结：
  * 1，把 lambda 表达式作为命名实参传递
+ * 2, Alt + Enter 可以弹出菜单： 把 lambda 表达式移到括号外 和 把 lambda 表达式移到括号内
  */

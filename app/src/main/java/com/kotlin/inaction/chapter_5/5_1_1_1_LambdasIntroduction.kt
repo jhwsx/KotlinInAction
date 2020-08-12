@@ -10,13 +10,13 @@ class Button : View(){
 }
 
 open class View {
-   var listener: View.OnClickListener
-    set(value: View.OnClickListener) {
-        this.listener = value
-    }
-    get() {
-        return listener
-    }
+   var listener: View.OnClickListener? = null
+//    set(value) {
+//        field = value
+//    }
+//    get() {
+//        return field
+//    }
 
     fun setOnClickListener(listener: () -> Unit) {
 

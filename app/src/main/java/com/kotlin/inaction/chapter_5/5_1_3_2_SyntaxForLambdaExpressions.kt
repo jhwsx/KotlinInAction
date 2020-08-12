@@ -6,8 +6,11 @@ package com.kotlin.inaction.chapter_5
  * @date 2019/1/31
  */
 fun main(args: Array<String>) {
-    { println(42) }()
+    { println(42) }();
 
+    {}();
+
+    {}
 }
 
 /**
