@@ -1,5 +1,6 @@
 package com.kotlin.inaction.chapter_5
 
+
 /**
  *
  * @author wzc
@@ -8,9 +9,23 @@ package com.kotlin.inaction.chapter_5
 fun main(args: Array<String>) {
 
     val sum = { x: Int, y: Int -> x + y }
+    println("sum=$sum") // sum=Function2<java.lang.Integer, java.lang.Integer, java.lang.Integer>
     println(sum(1, 2))
 
-    val print = {x: Int -> println(x)}
+    val sum1 = object : Function2<Int, Int, Int> {
+        override fun invoke(x: Int, y: Int): Int {
+            return x + y
+        }
+    }
+    println("sum1=${sum1}")
+    println(sum1(1, 2))
+    // 匿名函数是个对象
+    val sum2 = fun(x: Int, y: Int): Int {
+        return x + y
+    }
+    println("sum2=${sum2}")
+    println(sum2(1, 2))
+    val print = { x: Int -> println(x) }
 
     print(33)
 }

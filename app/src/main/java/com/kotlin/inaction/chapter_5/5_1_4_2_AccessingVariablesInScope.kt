@@ -18,10 +18,25 @@ fun printProblemCounts(responses: Collection<String>) {
     })
     println("$clientErrors client errors, $serverErrors server errors")
 }
+class Ref<T>(var value: T)
+// 这个例子展示了 lambda 捕获背后的原理。
+fun printProblemCounts2(responses: Collection<String>) {
+    val clientErrors = Ref(0)
+    val serverErrors = Ref(0)
+    responses.forEach {
+        if (it.startsWith("4")) {
+            clientErrors.value++
+        } else if (it.startsWith("5")) {
+            serverErrors.value++
+        }
+    }
+    println("${clientErrors.value} client errors, ${serverErrors.value} server errors.")
+}
 
 fun main(args: Array<String>) {
     val responses = listOf<String>("200 OK", "403 Forbidden", "500 Internal Server Error")
     printProblemCounts(responses)
+    printProblemCounts2(responses)
 }
 
 /**

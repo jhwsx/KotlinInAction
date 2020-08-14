@@ -8,7 +8,7 @@ package com.kotlin.inaction.chapter_5
 fun salute() = println("Salute")
 
 fun main(args: Array<String>) {
-    run(::salute) // 这里省略了类名称
+    run(::salute) // 成员引用引用顶层函数（不是类成员），这里省略了类名称
 }
 
 /**

@@ -9,6 +9,10 @@ fun main(args: Array<String>) {
     val people = listOf<Person>(Person("Alice", 29), Person("Bob", 31))
     // 简明语法的写法
     println(people.maxBy { it.age })
+    // 匿名函数的写法
+    println(people.maxBy(fun(p: Person): Int {
+        return p.age
+    }))
     // 不使用任何简明语法的写法
     println(people.maxBy({ p: Person -> p.age }))
     // 对于不使用任何简明语法的写法进行优化

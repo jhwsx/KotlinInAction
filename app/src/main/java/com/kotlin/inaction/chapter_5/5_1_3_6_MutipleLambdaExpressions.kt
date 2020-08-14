@@ -22,4 +22,6 @@ fun main(args: Array<String>) {
  * 总结：
  * 1，参数类型的推断
  * 2，最后一个表达式就是 lambda 的结果。
+ * 3，注意：lambda 的结果不要写 return
+ * 4，lambda 不支持写出返回值的类型。
  */

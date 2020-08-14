@@ -9,9 +9,15 @@ fun main(args: Array<String>) {
     val p = Person("Dmitry", 35)
     val personAgeFunction = Person ::age
     println(personAgeFunction(p))
+    println(personAgeFunction.invoke(p)) // 需要传递一个参数
 
     val dmitrysAgeFunction = p::age
     println(dmitrysAgeFunction())
+    println(dmitrysAgeFunction.invoke()) // 不需要传递参数
+
+    val p1 = Person("wzc", 31)
+    val wzcAgeFunction = p1::age
+    println(wzcAgeFunction())
 }
 /**
  * 总结：
