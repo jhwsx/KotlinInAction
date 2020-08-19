@@ -16,7 +16,8 @@ fun main(args: Array<String>) {
     // 用成员引用的方式
     val newNames = people.map(Person::name)
     println(newNames)
-    //todo 下边这样写，是报错的，不知道为啥了？？？
-//    val newNamess = people.map { it::name }
-//    println(newNamess)
+    // 下面这种写法看起来很麻烦，不过也是正确的。
+    // it::name 是一个函数引用的对象，后面加括号就是调用它了，得到它的返回值。
+    val newNamess = people.map { (it::name)() }
+    println(newNamess)
 }

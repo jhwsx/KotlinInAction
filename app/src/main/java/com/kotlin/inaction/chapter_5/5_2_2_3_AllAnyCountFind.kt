@@ -16,4 +16,5 @@ fun main(args: Array<String>) {
 /**
  * 总结：
  * count 函数，统计满足条件的元素个数
+ * 不要再写 filter 再 size，因为会额外创建一个集合。
  */

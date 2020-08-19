@@ -10,10 +10,20 @@ fun main(args: Array<String>) {
         Person("Alice", 29),
         Person("Bob", 31)
     )
-    people.filter { it.age == people.maxBy(Person::age)!!.age }
+    var count = 0
+    people.filter { it.age == people.maxBy(Person::age.also {
+        println("执行次数：${++count}")
+    })!!.age }
+    println("++++++++++++++++++++++++++++")
+    count = 0
+    val maxAge = people.maxBy(Person::age.also {
+        println("执行次数：${++count}")
+    })!!.age
+    people.filter { it.age == maxAge }
+
 }
 
 /**
  * 总结：
- * 1, 这里用到了 !! ，not-null asserted，这保证了寻找最大年龄的过程只执行一次。
+ * 1, 把 maxBy 执行的结果保留一份，再执行 filter，可以减少 maxBy 重复计算。
  */

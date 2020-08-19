@@ -8,6 +8,7 @@ package com.kotlin.inaction.chapter_5
 fun main(args: Array<String>) {
     val list = listOf("a", "ab", "b")
     println(list.groupBy(String::first))
+    // {a=[a, ab], b=[b]}
 }
 
 /**

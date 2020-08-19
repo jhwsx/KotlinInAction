@@ -12,6 +12,7 @@ fun main(args: Array<String>) {
     val groupBy = people.groupBy { it.age }
     println(groupBy.javaClass) // 这里是一个 LinkedHashMap
     println(groupBy)
+    // {31=[Person(name=Alice, age=31), Person(name=Carol, age=31)], 29=[Person(name=Bob, age=29)]}
 }
 
 /**

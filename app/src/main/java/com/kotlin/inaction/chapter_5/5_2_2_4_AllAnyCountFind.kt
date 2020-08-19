@@ -13,6 +13,10 @@ fun main(args: Array<String>) {
     )
     val canBeInClub27 = {p: Person -> p.age <= 27}
     println(people.find(canBeInClub27))
+    println(people.firstOrNull(canBeInClub27))
+    val isOld = {p: Person -> p.age >= 60}
+    println(people.find(isOld))
+    println(people.firstOrNull(isOld))
 }
 /**
  * 总结：
