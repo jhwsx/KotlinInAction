@@ -9,8 +9,17 @@ fun createAllDoneRunnable(): Runnable { // 这个函数返回的是一个函数�
     return Runnable { println("All done!") } // 所以用 SAM 构造方法把 lambda 包装起来
 }
 
+fun createAllDoneRunnable2(): Runnable {
+    return object: Runnable {
+        override fun run() {
+            println("All done!2")
+        }
+    }
+}
+// 上面两种写法是等价的，但是明显可以看到 SAM 构造方法更加简洁。
 fun main(args: Array<String>) {
     createAllDoneRunnable().run()
+    createAllDoneRunnable2().run()
 }
 
 /**

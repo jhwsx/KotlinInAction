@@ -7,15 +7,22 @@ package com.kotlin.inaction.chapter_5
  */
 fun main(args: Array<String>) {
     // 传递 lambda 表达式
-    ReceiveLambdaArg.postponeComputation(1000) { println(42) } // 整个程序只会创建一个 Runnable 实例
+    val function = { println(42) }
+    println("function=$function")
+    ReceiveLambdaArg.postponeComputation(1000, function) // 整个程序只会创建一个 Runnable 实例
     // 传递 匿名对象 的方式
-    ReceiveLambdaArg.postponeComputation(1000, object : Runnable {
+    val value = object : Runnable {
         override fun run() {
             println(43)
         }
-    })
+    }
+    println("value=$value")
+    ReceiveLambdaArg.postponeComputation(1000, value)
     // 这种用法和第一种是等价的
-    val runnable = Runnable { println(44) } // 可以重用
+    val runnable: Runnable = Runnable { println(44) } // 可以重用
+    println("runnable=$runnable")
+    val runnable2: Runnable = Runnable({ println(44)}) // SAM 构造方法：作用是把 lambda 显式转换为函数式接口实例
+    ReceiveLambdaArg.postponeComputation(1000, runnable)
     ReceiveLambdaArg.postponeComputation(1000, runnable)
 
     handleComputation("create new instance every time")
