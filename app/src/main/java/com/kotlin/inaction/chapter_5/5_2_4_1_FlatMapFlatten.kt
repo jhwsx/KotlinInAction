@@ -11,7 +11,13 @@ fun main(args: Array<String>) {
     println("flatMap: " + strings.flatMap { it.toList() }) // flatMap: [a, b, c, d, e, f]
     val list = listOf(listOf(1, 2), listOf(3, 4))
     println("flatten:" + list.flatten()) // flatten:[1, 2, 3, 4]
-
+    val list2 = listOf("12", "34")
+    val map = list2.map { it.toList() }
+    println("map:" + map)
+    val flatten = map.flatten()
+    println("flatten:$flatten")
+    val flatMap = list2.flatMap { it.toList() }
+    println("flatMap:$flatMap")
 }
 
 /**
