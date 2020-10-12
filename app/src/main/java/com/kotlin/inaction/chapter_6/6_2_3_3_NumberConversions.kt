@@ -6,7 +6,7 @@ package com.kotlin.inaction.chapter_6
  * @date 2019/3/14
  */
 fun main(args: Array<String>) {
-    val b: Byte = 1 // 使用数字字面值去初始化一个类型已知的变量时
+    val b: Byte = 1 // 使用数字字面值去初始化一个类型已知的变量时, 1 转换为了 Byte 类型
     val l = b + 1L
     foo(l) // 把字面值作为实参传递给函数
 

@@ -9,6 +9,10 @@ fun sendEmailTo(email: String) {
     println("Send email to $email")
 }
 
+fun getQQEmail(qqNumber: String): String {
+    return "$qqNumber@qq.com"
+}
+
 fun main(args: Array<String>) {
     // 原来的写法
 //    val email1: String? = null
@@ -17,10 +21,21 @@ fun main(args: Array<String>) {
 //        sendEmailTo(email1)
 //    }
     // 使用 let 函数后的写法
+    // let 函数返回的是 lambda 表达式的结果
     val email2: String? = "willwaywang6@gmail.com"
-    email2?.let { email2 -> sendEmailTo(email2) }
+    email2?.let { email -> sendEmailTo(email) }
     val email3: String? = null
     email3?.let { sendEmailTo(it) }
+    println("apply:")
+    // 但是，apply 函数返回的还是调用者
+    email2?.apply { sendEmailTo(this) }
+    email3?.apply { sendEmailTo(this) }
+
+    println("---------------------------")
+    val qqNumber: String? = null
+    val qqNumber2: String? = "392337950"
+    println(qqNumber?.let { getQQEmail(it) })
+    println(qqNumber2?.let { getQQEmail(it) })
 }
 
 /**

@@ -14,3 +14,7 @@ fun printInUppercase(list: List<String>) {
     println(CollectionUtils.uppercaseAll(list))
     println(list.first())
 }
+
+/**
+ * Java 不会区分只读集合与可变集合。
+ */

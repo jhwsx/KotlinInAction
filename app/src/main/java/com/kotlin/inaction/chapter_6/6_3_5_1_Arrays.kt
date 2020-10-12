@@ -17,9 +17,13 @@ fun main(args: Array<String>) {
 
     val arrayOfNulls = arrayOfNulls<Int?>(1)
     arrayOfNulls[0] = null
+    arrayOfNulls[0] = 1
 
     val letters = Array<String>(26) { i ->
         ('a' + i).toString()
     }
     println(letters.joinToString(""))
 }
+/**
+ * 1, Kotlin 中的数组是一个带有类型参数的类
+ */

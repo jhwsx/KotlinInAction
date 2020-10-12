@@ -16,6 +16,8 @@ fun main(args: Array<String>) {
 //    yellAt(Person(null))
     yellAtSafe(Person(null))
     val person = Person(null)
+    // 自己决定是可空类型还是不可空类型
+    val name = person.name
     val s: String = person.name
     val s1: String? = person.name
 //    val i : Int = person.name
