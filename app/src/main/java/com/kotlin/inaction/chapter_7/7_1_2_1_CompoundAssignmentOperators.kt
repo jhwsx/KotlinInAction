@@ -7,7 +7,7 @@ package com.kotlin.inaction.chapter_7
  */
 data class Point3(val x: Int, val y: Int) {
     operator fun plus(p: Point3): Point3 {
-        return Point3(x+p.x,y+p.y)
+        return Point3(x + p.x, y + p.y)
     }
 }
 

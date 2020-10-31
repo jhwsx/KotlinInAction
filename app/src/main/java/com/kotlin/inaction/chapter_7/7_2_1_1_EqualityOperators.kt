@@ -34,4 +34,5 @@ fun main(args: Array<String>) {
  * a 安全调用 equals，若 a 是 null，那么就看 b 是不是 null，b 是 null，返回相等，b 不是 null，
  * 返回不相等；若 a 不是 null，则和 b 进行 equals 比较
  * 4，!= 也会转换为 equals 方法的调用。
+ * 5. equals 不能实现为扩展函数，因为继承自 Any 类的实现总是始终优先于扩展函数。
  */

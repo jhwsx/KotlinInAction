@@ -11,12 +11,17 @@ fun main(args: Array<String>) {
 
     val newList = list + listOf(4, 5) // + 返回一个新的集合
 
-    println(list)
+    println("list=$list, hashCode=${list.hashCode()}")
 
-    println(newList)
+    println("newList=$newList, hashCode=${newList.hashCode()}")
+
+    val list1 = newList - list
+
+    println("list1=$list1, hashCode=${list1.hashCode()}")
 }
 
 /**
  * 总结：
  * 1，+， += 用于集合
+ * 2, +, - 运算符总是返回新的集合。
  */

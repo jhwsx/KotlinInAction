@@ -6,10 +6,12 @@ package com.kotlin.inaction.chapter_7
  * @date 2019/3/28
  */
 fun main(args: Array<String>) {
+    // 用于可变集合
     val numbers = ArrayList<Int>()
+    println("numbers=$numbers, numbers.hashCode=${numbers.hashCode()}")
     numbers += 42 // <===> numbers.add(42)
     numbers += 43
-    println(numbers)
+    println("numbers=$numbers, numbers.hashCode=${numbers.hashCode()}")
 }
 
 /**
