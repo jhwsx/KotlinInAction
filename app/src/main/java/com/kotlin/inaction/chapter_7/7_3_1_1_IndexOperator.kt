@@ -1,5 +1,7 @@
 package com.kotlin.inaction.chapter_7
 
+import android.opengl.Matrix
+
 /**
  *
  * @author wzc
@@ -16,9 +18,17 @@ operator fun Point6.get(index: Int): Int {
     }
 }
 
+val array: Array<Array<Int>> = arrayOf(arrayOf(1, 2, 3, 4, 5), arrayOf(6, 7, 8, 9, 10))
+
+operator fun Array<Array<Int>>.get(rowIndex: Int, colIndex: Int): Int {
+    return this[rowIndex][colIndex]
+}
+
 fun main(args: Array<String>) {
     val p = Point6(10, 30)
     println(p[1])
+    println(array[0, 4])
+    println(array[1, 4])
 }
 /**
  * 总结：
