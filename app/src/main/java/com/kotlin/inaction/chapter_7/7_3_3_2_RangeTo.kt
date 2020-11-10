@@ -7,8 +7,8 @@ package com.kotlin.inaction.chapter_7
  */
 fun main(args: Array<String>) {
     val n = 9
-    println(0..n + 1)
-    println(0..(n + 1))
+    println(0..n + 1) // 这是正确的写法
+    println(0..(n + 1)) // 这是更清晰的写法
 
 //    0..n.forEach // 不被编译了
     (0..n).forEach { print(it) }
