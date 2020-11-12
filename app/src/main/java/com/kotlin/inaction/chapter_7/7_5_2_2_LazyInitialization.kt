@@ -11,8 +11,11 @@ fun loadEmail1(person: Person2): List<Email1> {
     println("load emails for ${person.name}")
     return listOf()
 }
+// by lazy 用于顶层属性
+val y by lazy { 6 }
 
 class Person2(val name: String) {
+    // by lazy 用于成员属性
     val emails by lazy { loadEmail1(this) }
 }
 
@@ -20,6 +23,8 @@ fun main(args: Array<String>) {
     val p = Person2("wzc")
     p.emails
     p.emails
+    // by lazy 用于局部变量
+    val x: Int by lazy { 5 }
 }
 
 /**

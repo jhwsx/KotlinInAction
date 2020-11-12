@@ -17,6 +17,11 @@ fun main(args: Array<String>) {
         "K154" to "Zhengzhou-Shanghai"
     )
     printEntries(map)
+    // 这里也用到了解构声明，把索引号和元素值包装在了数据类 IndexedValue 中。
+    val array = arrayOf(1, 2, 3, 4)
+    for ((index, value) in array.withIndex()) {
+        println("$index => $value")
+    }
 }
 
 /**

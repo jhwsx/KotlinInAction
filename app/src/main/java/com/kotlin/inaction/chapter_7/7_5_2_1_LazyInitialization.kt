@@ -9,6 +9,7 @@ class Email
 
 fun loadEmail(person: Person1): List<Email> {
     println("load emails for ${person.name}")
+    Thread.sleep(1000)
     return listOf()
 }
 
