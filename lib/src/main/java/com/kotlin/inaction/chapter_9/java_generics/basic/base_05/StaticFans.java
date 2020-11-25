@@ -2,7 +2,9 @@ package com.kotlin.inaction.chapter_9.java_generics.basic.base_05;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.kotlin.inaction.chapter_2.Person;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
