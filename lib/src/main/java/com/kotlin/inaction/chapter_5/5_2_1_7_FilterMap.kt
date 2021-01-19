@@ -11,6 +11,9 @@ fun main(args: Array<String>) {
     println(numbers.mapKeys { "key="+ it.key })
     println(numbers.filterValues { it == "zero" }) // 这里不用再写 it.value
     println(numbers.filterKeys { it === 0 }) // 这里不用再写 it.key
+    val maps = mutableMapOf<String, Int>("one" to 1, "two" to 2)
+    maps["one"] = 10
+    println(maps)
 }
 
 /**

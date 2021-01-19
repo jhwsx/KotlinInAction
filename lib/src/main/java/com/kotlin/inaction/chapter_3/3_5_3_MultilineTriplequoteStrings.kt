@@ -20,4 +20,17 @@ fun main(args: Array<String>) {
     println(path)
 
     println("""$ {'$'} 99.99""")
+
+    val m1 = """
+    Line1
+    Line2
+    Line3
+    """
+    val m2 = """
+    .------
+    .======
+    .××××××
+    """
+    print(m1)
+    print(m2.trimMargin("."))
 }
