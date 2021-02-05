@@ -20,6 +20,20 @@ fun main(args: Array<String>) {
     println(strLenSafe2("wangzhichao"))
     println(strLenSafe1(null))
     println(strLenSafe2(null))
+    assert(playerName(null) == "Guest")
+    assert(playerName("Peter") == "Peter")
+}
+
+fun playerName(name: String?): String {
+    return name ?: "Guest"
+}
+
+fun playerName2(name: String?): String {
+    return name ?: throw Exception("Cannot be null")
+}
+
+fun playerName3(name: String?): String {
+    return name ?: return ""
 }
 
 /**
