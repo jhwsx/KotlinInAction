@@ -19,6 +19,8 @@ fun main(args: Array<String>) {
     }
     println("sum1=${sum1}")
     println(sum1(1, 2))
+    // 等价写法
+    println(sum1.invoke(1,2))
     // 匿名函数是个对象
     val sum2 = fun(x: Int, y: Int): Int {
         return x + y

@@ -15,7 +15,14 @@ fun max3(a: Int, b: Int) = if (a > b) a else b // 只有表达式体函数的返
 
 fun main(arg: Array<String>) {
     println(max(1, 2))
+    println(isEven(2))
 }
+
+//fun isEven(number: Int): Boolean {
+//    return number % 2 == 0
+//}
+
+fun isEven(number: Int): Boolean = number % 2 == 0
 
 /*
 总结：

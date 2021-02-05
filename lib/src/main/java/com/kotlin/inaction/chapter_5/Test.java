@@ -1,5 +1,6 @@
 package com.kotlin.inaction.chapter_5;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,5 +16,13 @@ public class Test {
         map.put("pear", 4);
         map.put("orange", 4);
         System.out.println(map);
+
+        Comparator<Integer> comparator = (Integer o1, Integer o2) -> Integer.compare(o1, o2);
+        comparator.compare(1, 2);
+
+        Comparator<Integer> comparator1 = (o1, o2) -> {
+            System.out.println("xxxxx");
+            return Integer.compare(o1, o2);
+        };
     }
 }
