@@ -1,12 +1,13 @@
 package com.kotlin.inaction.chapter_4
 
 /**
+ * 类委托，使用 by 关键字
  *
  * @author wzc
  * @date 2019/1/26
  */
 class CountingSet<T>(
-    val innerSet: MutableCollection<T> = HashSet<T>()
+        private val innerSet: MutableCollection<T> = HashSet()
 ) : MutableCollection<T> by innerSet {
     var objectsAdded = 0
 
