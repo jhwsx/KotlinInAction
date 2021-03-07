@@ -1,6 +1,9 @@
 package com.kotlin.inaction.chapter_7
 
 /**
+ * 参考文章：https://cloud.tencent.com/developer/article/1400441
+ *
+ * 使用支持属性技术，来实现惰性初始化
  *
  * @author wzc
  * @date 2019/4/14

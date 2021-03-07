@@ -35,6 +35,7 @@ class ObservableProperty(
 
 class Person9(val name: String, age: Int, salary: Int) : PropertyChangeAware1() {
     val _age = ObservableProperty("age", age, changeSupport)
+    // age 的值存放在了 ObservableProperty 对象里面
     var age: Int
         get() = _age.getValue()
         set(value) {_age.setValue(value)}

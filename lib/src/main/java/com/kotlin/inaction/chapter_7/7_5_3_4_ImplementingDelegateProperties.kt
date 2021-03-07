@@ -6,6 +6,7 @@ import kotlin.properties.Delegates
 import kotlin.reflect.KProperty
 
 /**
+ * 使用 Kotlin 标准库中的委托
  *
  * @author wzc
  * @date 2019/4/24
@@ -26,6 +27,7 @@ open class PropertyChangeAware3 {
 
 class Person11(val name: String, age: Int, salary: Int) : PropertyChangeAware3() {
 
+    // 当属性值修改后会调用这个 lambda 。
     private val observer = {
         prop: KProperty<*>, oldValue: Int, newValue: Int ->
         changeSupport.firePropertyChange(prop.name, oldValue, newValue)

@@ -36,4 +36,6 @@ fun main(args: Array<String>) {
 
 /**
  * 1, 使用委托属性，仅仅是写的简单一些而已。
+ * 2, 为什么可以这样用？因为标准库已经在 Map 和 MutableMap 接口上定义了 getValue 和 setValue 扩展函数。
+ * 位置是在 MapAccessors.kt 中。可以通过 Map 对象.setValue 找到。
  */
