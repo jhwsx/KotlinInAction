@@ -13,9 +13,9 @@ fun main(args: Array<String>) {
 //    fail("Error occured")
 
     val firm = Firm("wzc", null)
-    val location1 = firm.location ?: throw IllegalStateException("location is null")
-    val location2 = firm.location ?: flunk()
-    val location3 = firm.location ?: fail("location is null")
+    val location1 = firm.location ?: throw IllegalStateException("location is null") // location1 推断为 Location 类型
+    val location2 = firm.location ?: flunk() // location2 推断为 Any 类型，因为 Location 类型和 Unit 类型的共同父类是 Any 类型
+    val location3 = firm.location ?: fail("location is null") // location3 推断为 Location 类型
     println(location3.city)
 }
 
