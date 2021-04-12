@@ -1,6 +1,7 @@
 package com.kotlin.inaction.chapter_3
 
 import com.kotlin.inaction.chapter_3.extension.show
+import com.kotlin.inaction.chapter_3.extension1.show as show1
 
 /**
  *
@@ -12,9 +13,13 @@ fun Button.showOff1() = println("I'm a Button")
 fun View.showOff() = println("I am a View")
 
 class A {
-//    fun show() {
-//        println("I'm a member method：show()")
-//    }
+    fun show() {
+        println("I'm a member method：show()")
+    }
+}
+
+class B {
+
 }
 
 fun main(args: Array<String>) {
@@ -25,6 +30,10 @@ fun main(args: Array<String>) {
     // 验证 如果一个类的成员函数和扩展函数有相同的签名，成员函数往往会被优先使用
     val a = A()
     a.show()
+
+    val b = B()
+    b.show()
+    b.show1()
 }
 
 /**

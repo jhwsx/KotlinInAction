@@ -1,6 +1,8 @@
 package com.kotlin.inaction.chapter_3
 
 /**
+ * 参考：
+ * https://mp.weixin.qq.com/s/NKymd7Suc52j4E5nhg5MSQ
  *
  * @author wzc
  * @date 2019/1/12

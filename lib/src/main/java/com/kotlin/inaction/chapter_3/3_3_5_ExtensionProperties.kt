@@ -25,4 +25,5 @@ fun main(args: Array<String>) {
  * 2，扩展属性可以没有任何状态；
  * 3，扩展属性必须定义 getter 函数，因为没有支持字段，因此没有默认 getter 的实现；
  * 也不可以初始化，因为没有地方存储初始值。
+ * 4, 扩展属性不存在 backing field。
  */
