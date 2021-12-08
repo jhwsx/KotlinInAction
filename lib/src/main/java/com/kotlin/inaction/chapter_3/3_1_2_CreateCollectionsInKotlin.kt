@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
     println(strings.get(0))
     println(strings.component1())
 
-    println(numbers.max())
+    println(numbers.maxOrNull())
 }
 /*
 运行结果：

@@ -36,14 +36,21 @@ fun <T> joinToString3(
     result.append(postfix)
     return result.toString()
 }
+// 参考：https://juejin.cn/post/7038914452841824269
+@JvmOverloads
+fun search(name: String? = null, price: Float = 0.0f, kind: Int = -1) {}
 
 fun main(args: Array<String>) {
-    val list = setOf(1, 2, 3)
-    println(joinToString2(list, ", ", "{","}"))
-    println(joinToString2(list, ", ", "", ""))
-    println(joinToString2(list))
-    println(joinToString2(list, "; "))
-    println(joinToString2(list, separator = "、", prefix = "{", postfix = "}"))
+//    val list = setOf(1, 2, 3)
+//    println(joinToString2(list, ", ", "{","}"))
+//    println(joinToString2(list, ", ", "", ""))
+//    println(joinToString2(list))
+//    println(joinToString2(list, "; "))
+//    println(joinToString2(list, separator = "、", prefix = "{", postfix = "}"))
+    search("Kotlin")
+    search("Kotlin", 66.6f)
+    search("Kotlin", kind = 1)
+    search(price = 100.0f)
 }
 
 /**
