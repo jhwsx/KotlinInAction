@@ -60,4 +60,3 @@ fun main(args: Array<String>) {
  * 3, 若要使用 private get， 那么属性也得是 private 的。
  * 4, 在一个 final 类中，protected 的可见性和 private 是一样的。
  */
-// TODO @JvmField 是什么作用？

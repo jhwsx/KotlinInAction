@@ -9,6 +9,10 @@ package com.kotlin.inaction.chapter_4
 class Person(val name: String, val id: Int, val salary: Float)
 
 object Payroll {
+    // Constructors are not allowed for objects
+//    constructor() {
+//
+//    }
     // 可以有初始化语句块
     init {
         println("init block")
