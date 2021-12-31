@@ -7,7 +7,7 @@ package com.kotlin.inaction.chapter_5
  */
 fun main(args: Array<String>) {
     val p = Person("Dmitry", 35)
-    val personAgeFunction = Person ::age
+    val personAgeFunction = Person::age
     println(personAgeFunction(p))
     println(personAgeFunction.invoke(p)) // 需要传递一个参数
 

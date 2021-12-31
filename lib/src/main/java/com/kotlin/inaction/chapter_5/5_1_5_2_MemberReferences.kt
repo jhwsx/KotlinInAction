@@ -9,6 +9,47 @@ fun salute() = println("Salute")
 
 fun main(args: Array<String>) {
     run(::salute) // 成员引用引用顶层函数（不是类成员），这里省略了类名称
+    // ::salute 是一个函数类型的对象，函数类型的对象可以通过括号来调用
+    (::salute)()
+    // 等价于
+    (::salute).invoke()
+
+    // 函数引用写法：
+    a(::b)
+
+    val d = ::b
+    // 匿名函数写法：
+    a(fun(param: Int): String {
+        return param.toString()
+    })
+    val dd = fun(param: Int): String {
+        return param.toString()
+    }
+    // lambda 写法：
+    a({ param: Int -> param.toString() })
+    val ddd = { param: Int -> param.toShort() }
+}
+
+fun b(param: Int): String {
+    return param.toString()
+}
+
+fun a(action: (Int) -> String) {
+
+}
+
+fun c(): (Int) -> String {
+    return ::b
+}
+
+fun cc(): (Int) -> String {
+    return fun(param: Int): String {
+        return param.toString()
+    }
+}
+
+fun ccc(): (Int) -> String {
+    return { param: Int -> param.toString() }
 }
 
 /**

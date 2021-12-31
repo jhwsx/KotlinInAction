@@ -10,6 +10,20 @@ fun main(args: Array<String>) {
     val newList = list.filter { it % 2 == 0 }
     println("list=${list.hashCode()}, newList=${newList.hashCode()}")
     println(newList)
+
+    val newList2 = list.myfilter { it % 2 == 0 }
+    println("list=${list.hashCode()}, newList2=${newList2.hashCode()}")
+    println(newList2)
+}
+
+fun <T> Iterable<T>.myfilter(predicate: (T)-> Boolean): List<T> {
+    val result = ArrayList<T>()
+    for (t in this) {
+        if (predicate(t)) {
+            result.add(t)
+        }
+    }
+    return result
 }
 
 /**

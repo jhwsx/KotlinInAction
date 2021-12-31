@@ -10,7 +10,10 @@ fun main(args: Array<String>) {
     val getAge = { p: Person -> p.age }
     val getAge1: (Person) -> Int = {p -> p.age}
     val getAge2: (Person) -> Int = { it.age}
-
+    val getAge3 = fun(p: Person): Int {
+        return p.age
+    }
+    println(getAge3(Person("wzc", 18)))
     val sum = { x: Int, y: Int ->
         println("Computing the sum of $x and $y...")
         x + y

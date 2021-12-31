@@ -10,13 +10,21 @@ fun main(args: Array<String>) {
     val p = createPerson("Alice", 33)
     println(p)
 
-    val predictate = Person :: isAdult
+    val predictate = Person::isAdult
     println(predictate)
 }
 
 
 fun Person.isAdult() = age >= 21
 
+class Extensions {
+    fun String.method() {}
+
+    fun call() {
+        // 'method' is a member and an extension at the same time. References to such elements are not allowed
+        // String::method() // 报错
+    }
+}
 /**
  * 总结：
  * 1，用构造方法引用存储或者延期执行创建类实例的动作；

@@ -19,7 +19,9 @@ open class View {
 //    }
 
     fun setOnClickListener(listener: () -> Unit) {
-
+        listener()
+        // 等价于
+        // listener.invoke()
     }
 
     interface OnClickListener {

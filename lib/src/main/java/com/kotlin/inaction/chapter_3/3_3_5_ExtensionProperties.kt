@@ -11,6 +11,9 @@ var StringBuilder.lastChar: Char
     get() = this.get(this.length - 1)
     set(value: Char) = this.setCharAt(this.length - 1, value)
 
+val <T> List<T>.lastIndex: Int
+    get() = this.size - 1
+
 fun main(args: Array<String>) {
     println("Kotlin".lastChar)
     val sb = StringBuilder("Kotlin?")

@@ -16,8 +16,28 @@ fun alphabet2(): String {
     }
 }
 
+fun myalphabet2(): String {
+    val stringBuilder = StringBuilder()
+    return mywith(stringBuilder) {
+        for (letter in 'a'..'z') {
+            append(letter)
+        }
+        append("\nNow I know the alphabet!")
+        this.toString()
+    }
+}
+
+fun <T, R> mywith(receiver: T, block: T.() -> R): R {
+    return receiver.block()
+}
+
+fun mywith2(receiver: StringBuilder, block: StringBuilder.() -> String): String {
+    return receiver.block()
+}
+
 fun main(args: Array<String>) {
     println(alphabet2())
+    println(myalphabet2())
 }
 
 /**

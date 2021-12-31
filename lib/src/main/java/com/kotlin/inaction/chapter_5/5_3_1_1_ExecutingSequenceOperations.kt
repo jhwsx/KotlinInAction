@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
     val filter = map.filter { it.startsWith("A") }
     println(filter.hashCode())
     println(filter.toList())
-
+    // 这里运用了装饰器设计模式
     println(people.asSequence()
         .map(Person::name)
         .filter { it.startsWith("A") }
