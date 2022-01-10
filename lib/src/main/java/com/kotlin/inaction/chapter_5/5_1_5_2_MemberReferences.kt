@@ -27,7 +27,7 @@ fun main(args: Array<String>) {
     }
     // lambda 写法：
     a({ param: Int -> param.toString() })
-    val ddd = { param: Int -> param.toShort() }
+    val ddd = { param: Int -> param.toString() }
 }
 
 fun b(param: Int): String {
@@ -37,18 +37,21 @@ fun b(param: Int): String {
 fun a(action: (Int) -> String) {
 
 }
-
+// 可返回
 fun c(): (Int) -> String {
+    // 返回函数引用
     return ::b
 }
 
 fun cc(): (Int) -> String {
+    // 返回匿名函数
     return fun(param: Int): String {
         return param.toString()
     }
 }
 
 fun ccc(): (Int) -> String {
+    // 返回 lambda 表达式
     return { param: Int -> param.toString() }
 }
 

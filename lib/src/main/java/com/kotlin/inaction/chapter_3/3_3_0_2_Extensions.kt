@@ -34,6 +34,11 @@ class Derived : Base() {}
 
 open class BaseCaller {
     // 定义了 Base 类的扩展函数，这样就限定了只有 Base 类对象才可以调用它。
+    // 成员扩展函数可以重写
+    // 这句话多理解理解：
+    // Extensions declared as members can be declared as open and overridden in subclasses.
+    // This means that the dispatch of such functions is virtual with regard to the dispatch receiver type,
+    // but static with regard to the extension receiver type.
     open fun Base.printFunctionInfo() {
         println("Base extension function in BaseCaller")
     }

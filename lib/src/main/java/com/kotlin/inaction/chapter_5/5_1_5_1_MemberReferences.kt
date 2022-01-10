@@ -25,10 +25,14 @@ val getAge4 = object: Function1<Person, Int> {
 
 }
 fun main(args: Array<String>) {
-    println("getAge=$getAge") // getAge=property age (Kotlin reflection is not available)
-    println("getAge2=$getAge2") // getAge2=Function1<com.kotlin.inaction.chapter_5.Person, java.lang.Integer>
-    println("getAge3=$getAge3") // getAge3=Function1<com.kotlin.inaction.chapter_5.Person, java.lang.Integer>
-    println("getAge4=$getAge4") // getAge4=com.kotlin.inaction.chapter_5._5_1_5_1_MemberReferencesKt$getAge4$1@681a9515
+    // getAge=property age (Kotlin reflection is not available), class=class com.kotlin.inaction.chapter_5._5_1_5_1_MemberReferencesKt$getAge$1
+    println("getAge=$getAge, class=${getAge.javaClass}")
+    // getAge2=Function1<com.kotlin.inaction.chapter_5.Person, java.lang.Integer>, class=class com.kotlin.inaction.chapter_5._5_1_5_1_MemberReferencesKt$getAge2$1
+    println("getAge2=$getAge2, class=${getAge2.javaClass}")
+    // getAge3=Function1<com.kotlin.inaction.chapter_5.Person, java.lang.Integer>, class=class com.kotlin.inaction.chapter_5._5_1_5_1_MemberReferencesKt$getAge3$1
+    println("getAge3=$getAge3, class=${getAge3.javaClass}")
+    // getAge4=com.kotlin.inaction.chapter_5._5_1_5_1_MemberReferencesKt$getAge4$1@6b884d57, class=class com.kotlin.inaction.chapter_5._5_1_5_1_MemberReferencesKt$getAge4$1
+    println("getAge4=$getAge4, class=${getAge4.javaClass}")
 
 
     println(getAge(Person("wzj", 31)))

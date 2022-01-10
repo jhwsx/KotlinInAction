@@ -30,6 +30,7 @@ class Connection(val host: Host, val port: Int) {
 //        System.out.print(var2);
 //        this.printPort();
 //    }
+    // 这时 Connection 对象就是 dispatcher receiver，Host 对象就是 extension receiver 了。
     fun Host.printConnectionString() {
         printHostname() // 可以直接调用 host 对象的成员函数了。
         print(":")

@@ -27,6 +27,7 @@ fun myalphabet2(): String {
     }
 }
 
+// T.() -> R 中的 T 是限定了接收者或者说调用者。
 fun <T, R> mywith(receiver: T, block: T.() -> R): R {
     return receiver.block()
 }

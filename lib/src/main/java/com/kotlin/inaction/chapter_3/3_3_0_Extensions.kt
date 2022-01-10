@@ -60,8 +60,18 @@ fun main(args: Array<String>) {
 
     println(null.tooString())
     println(Example().tooString())
+
+    YourClass.printCompanion()
 }
 
+class YourClass {
+    companion object
+}
+
+// 给伴生对象添加扩展
+fun YourClass.Companion.printCompanion() {
+    println("printCompanion() method called")
+}
 /**
  * 总结：
  * 1，kotlin 中使用扩展函数，就是一个类的成员函数，不过是定义在类的外边；

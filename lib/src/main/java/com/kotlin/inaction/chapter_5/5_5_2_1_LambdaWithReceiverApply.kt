@@ -12,8 +12,21 @@ fun alphabet4() = StringBuilder().apply { // 这里 apply 返回是一个 String
     append("\nNow I know the alphabet!")
 }.toString()
 
+fun alphabet44() = StringBuilder().myapply { // 这里 apply 返回是一个 StringBuilder 对象，即接收者对象。
+    for (letter in 'A'..'Z') {
+        append(letter)
+    }
+    append("\nNow I know the alphabet!")
+}.toString()
+
 fun main(args: Array<String>) {
     println(alphabet4())
+    println(alphabet44())
+}
+
+fun <T> T.myapply(block: T.() -> Unit) : T {
+    block()
+    return this
 }
 
 /**
