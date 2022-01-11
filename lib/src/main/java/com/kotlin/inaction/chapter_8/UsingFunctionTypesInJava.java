@@ -25,6 +25,7 @@ public class UsingFunctionTypesInJava {
             }
         });
         // 在 Java 中使用 kotlin 标准库中以 lambda 作为参数的扩展函数，但是必须显式地传递一个接收者对象作为第一个参数
+        // 这是因为这里的 forEach 是一个扩展函数，它的函数类型是带接收者的函数类型。
         List<String> strings = new ArrayList<>();
         strings.add("42");
         CollectionsKt.forEach(strings, s -> {

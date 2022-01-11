@@ -9,7 +9,7 @@ enum class Delivery { STANDARD, EXPEDITED }
 
 class Order(val itemCount: Int)
 
-// 这是声明一个返回函数的函数
+// 这是声明一个返回函数类型的函数，返回的是计算运输费用的方式。
 fun getShippingCostCalculator(delivery: Delivery): (Order) -> Double {
     if (delivery == Delivery.EXPEDITED) {
         return { order -> 6 + 2.1 * order.itemCount }

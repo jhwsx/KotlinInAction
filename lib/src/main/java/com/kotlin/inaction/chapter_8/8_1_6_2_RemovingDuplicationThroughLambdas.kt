@@ -20,7 +20,7 @@ val log1 = mutableListOf(
     SiteVisit1("/signup",8.0,OS1.IOS),
     SiteVisit1("/",16.3,OS1.ANDROID)
 )
-
+// 将平台类型抽取为一个函数，这里是定义了一个扩展函数
 fun List<SiteVisit1>.averageDurationFor(os: OS1) =
         filter { it.os == os }.map(SiteVisit1::duration).average()
 
