@@ -14,7 +14,7 @@ fun getShippingCostCalculator(delivery: Delivery): (Order) -> Double {
     if (delivery == Delivery.EXPEDITED) {
         return { order -> 6 + 2.1 * order.itemCount }
     }
-    return { order -> 1.2 * order.itemCount }
+    return { order -> 1.2 * order.itemCount } // 返回一个 lambda
 }
 
 fun main(args: Array<String>) {

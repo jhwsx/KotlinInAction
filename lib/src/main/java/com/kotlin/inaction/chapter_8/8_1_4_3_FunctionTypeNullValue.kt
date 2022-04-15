@@ -1,5 +1,7 @@
 package com.kotlin.inaction.chapter_8
 
+import java.util.*
+
 /**
  *
  * @author wzc
@@ -29,12 +31,12 @@ fun <T> Collection<T>.joinToString3(
 fun main(args: Array<String>) {
     val letters = listOf("Adups", "Adup")
     println(letters.joinToString3())
-    println(letters.joinToString3 { it.toUpperCase() })
+    println(letters.joinToString3 { it.uppercase(Locale.getDefault()) })
     println(
         letters.joinToString3(
             separator = "! ",
             postfix = "! ",
-            transform = { it.toUpperCase() })
+            transform = { it.uppercase(Locale.getDefault()) })
     )
 }
 /**

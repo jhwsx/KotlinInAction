@@ -7,6 +7,15 @@ import java.util.concurrent.locks.Lock
  * @author wzc
  * @date 2019/6/3
  */
+inline fun <T> synchronized(lock: Lock, action: () -> T): T {
+    lock.lock()
+    try {
+        return action()
+    } finally {
+        lock.unlock()
+    }
+}
+// 查看对应的 Java 代码，理解内联的作用
 fun foo(l: Lock) {
     println("Befor sync")
     synchronized(l) {
@@ -14,6 +23,42 @@ fun foo(l: Lock) {
     }
     println("After sync")
 }
+// 不内联对应的 Java 代码
+/*
+public static final void foo(@NotNull Lock l) {
+   Intrinsics.checkNotNullParameter(l, "l");
+   String var1 = "Befor sync";
+   boolean var2 = false;
+   System.out.println(var1);
+   synchronized(l, (Function0)null.INSTANCE);
+   var1 = "After sync";
+   var2 = false;
+   System.out.println(var1);
+}
+*/
+// 内联对应的 Java 代码
+/*
+public static final void foo(@NotNull Lock l) {
+   Intrinsics.checkNotNullParameter(l, "l");
+   String var1 = "Befor sync";
+   boolean var2 = false;
+   System.out.println(var1);
+   int $i$f$synchronized = false;
+   l.lock();
+   try {
+      var2 = false;
+      String var3 = "Action";
+      boolean var4 = false;
+      System.out.println(var3);
+      Unit var8 = Unit.INSTANCE;
+   } finally {
+      l.unlock();
+   }
+   var1 = "After sync";
+   var2 = false;
+   System.out.println(var1);
+}
+ */
 
 /**
  * 总结：

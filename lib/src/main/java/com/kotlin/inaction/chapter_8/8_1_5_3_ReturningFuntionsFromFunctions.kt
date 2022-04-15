@@ -11,6 +11,7 @@ class ContactListFilters {
     var prefix: String = ""
     var onlyWithPhoneNumber: Boolean = false
 
+    // 获取一个判断式，是一个函数类型的判断式，以 Person 作为参数，以 Boolean 作为返回值的函数类型。
     fun getPredicate(): (Person) -> Boolean {
         val startsWithPrefix = { p: Person ->
             p.firstName.startsWith(prefix) || p.lastName.startsWith(prefix)

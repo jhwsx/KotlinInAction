@@ -1,5 +1,7 @@
 package com.kotlin.inaction.chapter_8
 
+import java.util.*
+
 /**
  *
  * @author wzc
@@ -28,11 +30,11 @@ fun <T> Collection<T>.joinToString2(
 fun main(args: Array<String>) {
     val letters = listOf("Alpha", "Beta","Release")
     println(letters.joinToString2()) // 省略了整个 lambda
-    println(letters.joinToString2 { it.toUpperCase() }) // 在括号以外传递 lambda
+    println(letters.joinToString2 { it.uppercase(Locale.getDefault()) }) // 在括号以外传递 lambda
     println(
         letters.joinToString2(
             separator = "! ",
             postfix = "! ",
-            transform = { it.toUpperCase() }) // 以命名参数形式传递
+            transform = { it.uppercase(Locale.getDefault()) }) // 以命名参数形式传递
     )
 }
