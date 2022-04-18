@@ -1,7 +1,5 @@
 package com.kotlin.inaction.chapter_9
 
-import com.kotlin.inaction.chapter_6.Processor
-
 /**
  *
  * @author wzc

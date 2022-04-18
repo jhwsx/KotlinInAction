@@ -22,7 +22,7 @@ fun main(args: Array<String>) {
     println("any is Int: ${any is Int}")
     println(any)
 
-    val numberList: List<Number> = list
+    val numberList: List<Number> = list // List<Int> 是 List<Number> 的子类型
     val number = numberList[1]
 
     println("number is Int: ${number is Int}")
@@ -39,4 +39,6 @@ fun main(args: Array<String>) {
  * 1，这个例子学习协变的术语：
  * 如果 A 是 B 的子类型，那么 List<A> 就是 List<B> 的子类型，就说像 List 这样的
  * 类或者接口是协变的。
+ * 2，这里要特别说明一下，Kotlin 中的 List 接口与 Java 中的 List 接口不一样，Kotlin 中的 List
+ * 接口是只读集合。
  */

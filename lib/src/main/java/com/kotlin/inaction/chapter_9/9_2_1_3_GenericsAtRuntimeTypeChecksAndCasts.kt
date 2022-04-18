@@ -13,8 +13,8 @@ fun printSum(c: Collection<Int>) {
 
 fun main(args: Array<String>) {
     printSum(listOf(1, 2, 3))
-//    printSum(setOf(3, 4, 5)) // Set 不是 List，抛出异常：java.lang.IllegalArgumentException: List is expected
-    printSum(listOf("a", "b")) // String 不可以调用 sum(), 抛出异常：java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Number
+    printSum(setOf(3, 4, 5))
+    // printSum(listOf("a", "b")) // 这里抛出类型转换异常。
 }
 
 /**

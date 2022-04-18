@@ -6,15 +6,17 @@ package com.kotlin.inaction.chapter_9
  * @date 2019/7/16
  */
 fun printSum(c: Collection<*>) {
-    val intList = c as? List<Int>
+    val intList = c as? List<Int> // 警告：Unchecked cast: Collection<*> to List<Int>
             ?: throw IllegalArgumentException("List is expected")
     println(intList.sum())
 }
 
 fun main(args: Array<String>) {
-    printSum(listOf(1, 2, 3))
-//    printSum(setOf(3, 4, 5)) // Set 不是 List，抛出异常：java.lang.IllegalArgumentException: List is expected
-    printSum(listOf("a", "b")) // 类型转换成功，但String 不可以调用 sum(), 抛出异常：java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Number
+//    printSum(listOf(1, 2, 3))
+    // Set<Int> 和 List<Int> 的基础类型不一样，所以不能转换。
+    printSum(setOf(3, 4, 5)) // Set 不是 List，抛出异常：java.lang.IllegalArgumentException: List is expected
+    // List<String> 和 List<Int> 有一样的基础类型 List，但是类型实参是不一样的
+//    printSum(listOf("a", "b")) // 类型转换成功，但String 不可以调用 sum(), 抛出异常：java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Number
 }
 
 /**

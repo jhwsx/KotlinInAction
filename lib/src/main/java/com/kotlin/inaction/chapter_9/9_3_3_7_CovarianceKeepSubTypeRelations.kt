@@ -24,4 +24,5 @@ class Herd7<out T: Animal5>(private var leadAnimal: T, vararg animals: T) {
 /**
  * 总结：
  * 1，私有方法的参数既不在in位置也不在out位置。变型规则只会防止外部使用者对类的误用但不会对类自己的实现起作用。
+ * 2，位置规则只覆盖了类外部可见的（public,protected 和 internal） API
  */

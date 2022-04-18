@@ -15,5 +15,6 @@ fun main(args: Array<String>) {
 
 /**
  * 总结：
- * 1，这个例子中把 String 当成 Any 对待。是没有问题的。
+ * 1，这个例子中把 String 当成 Any 对待。是没有问题的。但是，这个例子具有迷惑性。
+ * 2，这样的写法在 Java 中是不可以的，需要用 ? extends Object，见 [Test_WhyVarianceExists]
  */

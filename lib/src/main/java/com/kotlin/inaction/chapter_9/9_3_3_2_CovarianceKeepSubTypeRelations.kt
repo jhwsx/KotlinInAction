@@ -1,5 +1,7 @@
 package com.kotlin.inaction.chapter_9
 
+import java.awt.HeadlessException
+
 /**
  * 定义一个不变型的类似集合的类
  *
@@ -8,11 +10,11 @@ package com.kotlin.inaction.chapter_9
  */
 open class Animal {
     fun feed() {
-        println("feed()")
+        println("feed ${javaClass.simpleName}")
     }
 }
-
-class Herd<T : Animal> {
+// Herd 畜群，作为动物元素的容器。
+class Herd<T : Animal> { // 类型参数没有声明为协变的
     private val list = arrayListOf<T>()
     val size: Int get() = list.size
     operator fun get(i: Int): T {
@@ -23,7 +25,7 @@ class Herd<T : Animal> {
         list.add(t)
     }
 }
-
+// 喂养 Head 代表的动物
 fun feedAll(animals: Herd<Animal>) {
     for (i in 0 until animals.size) {
         animals[i].feed()
@@ -40,17 +42,17 @@ fun takeCareOfCats(cats: Herd<Cat>) {
     for (i in 0 until cats.size) {
         cats[i].cleanLitter()
     }
+    // 可以使用显式的类型转换来绕过 cats 编译报错的问题，但是这种方法啰嗦，易出错。
+//    val herd: Herd<Animal> = cats as Herd<Animal>
 //    feedAll(cats) // 编译报错，类型不匹配 Type mismatch. Required: Herd<Animal> Found: Herd<Cat>
 }
 
-fun takeCareOfAnimals(animals: Herd<Animal>) {
-    for (i in 0 until animals.size) {
-        animals[i].feed()
-    }
-    feedAll(animals)
-}
-
 fun main(args: Array<String>) {
+    val h = Herd<Animal>()
+    h.add(Animal())
+    h.add(Animal())
+    feedAll(h)
+
     val herd = Herd<Cat>()
     herd.add(Cat())
     herd.add(Cat())

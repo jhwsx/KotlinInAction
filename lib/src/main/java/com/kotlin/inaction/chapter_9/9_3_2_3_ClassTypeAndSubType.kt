@@ -28,6 +28,9 @@ fun main(args: Array<String>) {
     val ssss: String? = sss
 
 }
+var intNonNull: Int = 5
+var intNullable: Int? = intNonNull // 说明 Int 是 Int? 的子类型
+// var anotherIntNonNull: Int = intNullable // 报错：Int? 不是 Int 的子类型
 
 /**
  * 总结：

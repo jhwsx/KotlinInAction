@@ -6,7 +6,10 @@ package com.kotlin.inaction.chapter_9
  * @date 2019/6/11
  */
 fun main(args: Array<String>) {
+    // fun <T> Iterable<T>.toList(): List<T>
+    // 泛型函数有它自己的类型形参。这些类型形参在每次调用函数时都必须替换成具体的类型实参。
     val letters = ('a'..'z').toList()
+    // fun <T> List<T>.slice(indices: IntRange): List<T>
     println(letters.slice<Char>(0..2)) // 显式地指定类型实参
     println(letters.slice(10..13)) // 不指定类型实参，而由编译器推导出来
 }

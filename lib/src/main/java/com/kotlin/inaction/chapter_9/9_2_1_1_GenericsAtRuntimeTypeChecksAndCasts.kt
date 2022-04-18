@@ -8,17 +8,35 @@ package com.kotlin.inaction.chapter_9
 fun main(args: Array<String>) {
     val list1: List<String> = listOf("a", "b")
     val list: List<Int> = listOf(1, 2)
+    // 在 is 检查中不可能使用类型实参中的类型
 //    if (list is List<String>) { // Cannot check for instance of erased type: List<String>
 //
 //    }
-    if (list is List) { // 1.3.60 不会编译错误.One type argument expected. Use 'List<*>' if you don't want to pass type arguments
-
+    // 这里虽然使用了没有指定泛型实参的泛型类型，没有报错，推测是编译器做了处理而已。因为正好 is 左边是 List。
+    if (list is List) {
+        println()
     }
 
     if (list1 is List<*>) { // 这就是星号投影语法
         println(true)
     }
 
+    val str: Any = ""
+    //
+//    if (str is List) {
+//        println()
+//    }
+
+    if (str is List<*>) {
+
+    }
+
+}
+
+fun checkList(value: Any): Boolean {
+//    return value is List<String> // 报错：Cannot check for instance of erased type: List<String>
+//    return value is List // 报错，因为 Kotlin 不允许使用没有指定类型实参的泛型类型。
+    return value is List<*> // OK
 }
 
 /**

@@ -5,8 +5,11 @@ package com.kotlin.inaction.chapter_9
  * @author wzc
  * @date 2019/6/14
  */
+// 这是一个带类型参数约束的函数
 fun <T: Comparable<T>> max(first: T, second: T): T {
     return if (first > second) first else second
+    // 提示：Call replaceable with binary operator
+//    return if (first.compareTo(second) > 0) first else second
 }
 fun main(args: Array<String>) {
     println(max("kotlin", "java"))

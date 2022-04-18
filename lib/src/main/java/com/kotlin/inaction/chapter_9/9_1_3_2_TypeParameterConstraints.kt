@@ -5,7 +5,9 @@ package com.kotlin.inaction.chapter_9
  * @author wzc
  * @date 2019/6/14
  */
+// 这里指定 Number 为类型形参 T 的上界
 fun <T : Number> oneHalf(value: T): Double {
+    // 可以调用定义在上界类中的方法了。
     return value.toDouble() / 2.0
 }
 fun main(args: Array<String>) {
